@@ -1,32 +1,13 @@
-<!--
-Complete TechLine single-file site — enhanced for production
-- Features added per your request:
-  • Animations (CSS + small JS)
-  • Internal sections with smooth transitions
-  • Simple chat widget (WhatsApp-backed chatbot)
-  • Contact form integrated to WhatsApp (no backend required)
-  • SEO meta tags + JSON-LD LocalBusiness structured data
-  • Favicon and logo references to uploaded files
-  • Ready-to-deploy instructions for Vercel (README included below)
-
-Files referenced (uploaded by you):
-  /mnt/data/Design sem nome.png      (primary logo)
-  /mnt/data/Design sem nome (6).png  (secondary / favicon)
-
-To deploy on Vercel: create a new project, connect Git repo or drag & drop this file (index.html), and publish. See README at the bottom of this file.
--->
-
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>TechLine — Serviços de Informática Profissionais</title>
-  <meta name="description" content="TechLine: manutenção, formatação, montagem, suporte remoto e consultoria. Atendimento rápido e preço justo." />
-  <meta name="keywords" content="TechLine, informatica, manutenção, formatação, montagem, consultoria, suporte remoto" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TechLine — Serviços de Informática</title>
+  <meta name="description" content="TechLine: manutenção, formatação, montagem, suporte remoto e consultoria. Atendimento rápido e preço justo.">
   <meta name="author" content="TechLine">
 
-  <!-- Open Graph / Social -->
+  <!-- Open Graph -->
   <meta property="og:title" content="TechLine — Serviços de Informática" />
   <meta property="og:description" content="Serviços rápidos e confiáveis em manutenção, suporte e consultoria. Deixe seu equipamento nas mãos de quem entende." />
   <meta property="og:image" content="/mnt/data/Design sem nome (6).png" />
@@ -38,18 +19,18 @@ To deploy on Vercel: create a new project, connect Git repo or drag & drop this 
   <meta name="twitter:description" content="Serviços rápidos e confiáveis em manutenção, suporte e consultoria." />
   <meta name="twitter:image" content="/mnt/data/Design sem nome (6).png" />
 
-  <!-- Favicon -->
+  <!-- Favicon (uses uploaded file path) -->
   <link rel="icon" href="/mnt/data/Design sem nome (6).png" />
 
-  <!-- Tailwind CDN for rapid styling -->
+  <!-- Tailwind for quick styling -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            primary: '#0B57D0', // blue
-            gold: '#D4AF37', // gold
+            primary: '#0B57D0', /* azul */
+            gold: '#D4AF37',    /* dourado */
             contrast: '#000000'
           }
         }
@@ -58,36 +39,16 @@ To deploy on Vercel: create a new project, connect Git repo or drag & drop this 
   </script>
 
   <style>
-    /* small custom styles */
-    .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(6px); }
+    /* Small custom tweaks */
+    .glass { background: rgba(255,255,255,0.75); backdrop-filter: blur(6px); }
     .card-hover { transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s; }
     .card-hover:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(2,6,23,0.12); }
-    .fade-enter { opacity: 0; transform: translateY(8px); }
-    .fade-enter-active { opacity: 1; transform: translateY(0); transition: all .45s ease; }
     .chat-bubble { animation: float 3s ease-in-out infinite; }
     @keyframes float { 0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)} }
-    /* accessibility focus ring */
-    :focus{outline: 3px solid rgba(11,87,208,.18); outline-offset: 2px}
+    :focus{ outline: 3px solid rgba(11,87,208,.18); outline-offset: 2px; }
+    /* small responsive fix for long filenames */
+    img { image-rendering: auto; max-width: 100%; height: auto; display: block; }
   </style>
-
-  <!-- Structured Data: LocalBusiness -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "TechLine",
-    "image": "/mnt/data/Design sem nome.png",
-    "@id": "",
-    "url": "",
-    "telephone": "+5537998400037",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Formiga, MG"
-    },
-    "sameAs": ["https://instagram.com/techline._"]
-  }
-  </script>
-
 </head>
 <body class="antialiased text-contrast bg-white">
 
@@ -95,20 +56,23 @@ To deploy on Vercel: create a new project, connect Git repo or drag & drop this 
   <header class="fixed w-full top-0 left-0 z-50">
     <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between glass border-b">
       <div class="flex items-center gap-3">
-        <img src="/mnt/data/Design sem nome.png" alt="TechLine" class="h-12 w-auto"/>
+        <!-- logo (icon) -->
+        <img src="/mnt/data/Design sem nome (6).png" alt="TechLine logo" class="h-12 w-12 object-contain" />
         <div>
           <div class="font-semibold text-primary text-xl">TechLine</div>
           <div class="text-xs text-slate-600">Confiança em cada reparo</div>
         </div>
       </div>
+
       <nav class="hidden md:flex items-center gap-6 text-sm">
         <a href="#home" class="hover:text-primary">Home</a>
         <a href="#services" class="hover:text-primary">Serviços</a>
         <a href="#about" class="hover:text-primary">Sobre</a>
         <a href="#contact" class="px-4 py-2 bg-primary text-white rounded-lg">Contato</a>
       </nav>
+
       <div class="md:hidden">
-        <a id="mobileWA" href="#" class="px-3 py-2 bg-primary text-white rounded">WhatsApp</a>
+        <a id="mobileWA" href="https://wa.me/5537998400037?text=Olá,%20quero%20informações" class="px-3 py-2 bg-primary text-white rounded">WhatsApp</a>
       </div>
     </div>
   </header>
@@ -121,10 +85,12 @@ To deploy on Vercel: create a new project, connect Git repo or drag & drop this 
         <div class="space-y-6">
           <h1 class="text-4xl md:text-5xl font-extrabold text-primary">TechLine — rapidez, confiança e transparência</h1>
           <p class="text-slate-700">Oferecemos serviços rápidos e confiáveis em manutenção, suporte e consultoria. Deixe seu equipamento nas mãos de quem entende.</p>
+
           <div class="flex gap-3 mt-4">
-            <a href="#services" class="px-5 py-3 bg-primary text-white rounded-lg shadow">Ver serviços</a>
-            <button id="quoteBtn" class="px-5 py-3 border border-slate-300 rounded-lg">Solicitar orçamento</button>
+            <a href="#services" class="px-6 py-3 bg-primary text-white rounded-lg shadow">Ver serviços</a>
+            <button id="quoteBtn" class="px-6 py-3 border border-slate-300 rounded-lg">Solicitar orçamento</button>
           </div>
+
           <div class="mt-6 grid grid-cols-2 gap-4 text-sm text-slate-600">
             <div>
               <strong class="block">Garantia</strong>
@@ -137,19 +103,21 @@ To deploy on Vercel: create a new project, connect Git repo or drag & drop this 
           </div>
         </div>
 
+        <!-- Card com imagem do técnico -->
         <div class="w-full flex justify-center">
           <div class="w-full max-w-md rounded-2xl shadow-xl overflow-hidden border card-hover">
-            <img src="https://images.unsplash.com/photo-1587825140708-9c1c6f34f8d7?q=80&w=1200&auto=format&fit=crop" alt="Técnico" class="w-full object-cover h-72"/>
+            <!-- avatar (usando a imagem 'design.png' enviada) -->
+            <img src="/mnt/data/design.png" alt="Técnico - TechLine" class="w-full object-cover h-72" />
             <div class="p-4 bg-white">
-              <h3 class="font-semibold">Diagnóstico rápido</h3>
-              <p class="text-sm text-slate-500 mt-2">Relatório detalhado e comunicação por WhatsApp durante todo o processo.</p>
+              <h3 class="font-semibold">Técnico</h3>
+              <p class="text-sm text-slate-500 mt-2">Atendimento especializado para seu equipamento.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- SERVIÇOS -->
     <section id="services" class="max-w-6xl mx-auto px-6 py-16">
       <div class="flex items-center justify-between">
         <div>
@@ -258,7 +226,7 @@ To deploy on Vercel: create a new project, connect Git repo or drag & drop this 
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- SOBRE -->
     <section id="about" class="bg-primary text-white py-12">
       <div class="max-w-4xl mx-auto px-6 text-center">
         <h2 class="text-3xl font-bold mb-4">Sobre a TechLine</h2>
@@ -266,12 +234,11 @@ To deploy on Vercel: create a new project, connect Git repo or drag & drop this 
       </div>
     </section>
 
-    <!-- CONTACT (Form + WhatsApp) -->
+    <!-- CONTATO -->
     <section id="contact" class="max-w-4xl mx-auto px-6 py-12">
       <div class="bg-white rounded-2xl p-6 border shadow">
         <h3 class="text-2xl font-semibold mb-2">Solicitar orçamento</h3>
         <p class="text-sm text-slate-600 mb-4">Preencha e envie — abriremos uma conversa no WhatsApp com os dados.</p>
-
         <form id="quoteForm" class="grid gap-3" onsubmit="return submitForm(event)">
           <input id="name" required class="p-3 border rounded" placeholder="Nome completo" />
           <input id="phone" required class="p-3 border rounded" placeholder="Telefone (Ex: 37 9xxxx-xxxx)" />
@@ -286,7 +253,6 @@ To deploy on Vercel: create a new project, connect Git repo or drag & drop this 
             <option>Limpeza Física</option>
           </select>
           <textarea id="details" required class="p-3 border rounded h-28" placeholder="Descreva o problema"></textarea>
-
           <div class="flex gap-3">
             <button type="submit" class="px-4 py-2 bg-primary text-white rounded">Enviar via WhatsApp</button>
             <button type="button" class="px-4 py-2 border rounded" onclick="resetForm()">Limpar</button>
@@ -295,120 +261,53 @@ To deploy on Vercel: create a new project, connect Git repo or drag & drop this 
       </div>
     </section>
 
+    <!-- RODAPÉ -->
+    <footer class="mt-12 bg-slate-900 text-white py-6">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <div class="flex items-center justify-center gap-4 mb-2">
+          <img src="/mnt/data/Design sem nome.png" class="h-8 object-contain" alt="TechLine com nome" />
+          <div class="text-sm">TechLine — Suporte, manutenção e montagem</div>
+        </div>
+        <div class="text-sm">Telefone/WhatsApp: <a href="https://wa.me/5537998400037" class="text-gold">(37) 99840-0037</a> — Instagram: <a href="https://instagram.com/techline._" class="text-gold">@techline._</a></div>
+        <div class="text-xs text-slate-400 mt-3">© 2025 TechLine. Todos os direitos reservados.</div>
+      </div>
+    </footer>
   </main>
 
-  <!-- Floating chat widget (simple) -->
-  <div id="chatWidget" class="fixed bottom-6 right-6 z-50">
-    <button id="openChat" aria-label="Abrir chat" class="flex items-center gap-3 px-4 py-3 bg-primary text-white rounded-full shadow-lg chat-bubble">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-3.8-11.3 8.38 8.38 0 0 1 3.8.9L21 3v8.5z"/></svg>
-      <span class="hidden sm:inline">Atendimento</span>
-    </button>
-
-    <!-- Chat panel -->
-    <div id="chatPanel" class="hidden mt-3 w-80 bg-white rounded-2xl p-4 border shadow-lg">
-      <div class="flex items-start gap-3">
-        <img src="/mnt/data/Design sem nome.png" alt="TechLine" class="h-10 w-10 rounded"/>
-        <div>
-          <div class="font-semibold">Atendimento TechLine</div>
-          <div class="text-xs text-slate-500">Respostas rápidas via WhatsApp</div>
-        </div>
-      </div>
-
-      <div class="mt-3">
-        <input id="chatName" class="w-full p-2 border rounded mb-2" placeholder="Seu nome" />
-        <input id="chatPhone" class="w-full p-2 border rounded mb-2" placeholder="Telefone" />
-        <textarea id="chatMsg" class="w-full p-2 border rounded mb-2" placeholder="Digite sua mensagem"></textarea>
-        <div class="flex gap-2">
-          <button onclick="sendChat()" class="px-3 py-2 bg-primary text-white rounded">Enviar</button>
-          <button onclick="closeChat()" class="px-3 py-2 border rounded">Fechar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="mt-12 bg-slate-900 text-white py-6">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <div class="flex items-center justify-center gap-4 mb-2">
-        <img src="/mnt/data/Design sem nome.png" class="h-8" alt="logo" />
-        <div class="text-sm">TechLine — Suporte, manutenção e montagem</div>
-      </div>
-      <div class="text-sm">Telefone/WhatsApp: <a href="https://wa.me/5537998400037" class="text-gold">(37) 99840-0037</a> — Instagram: <a href="https://instagram.com/techline._" class="text-gold">@techline._</a></div>
-      <div class="text-xs text-slate-400 mt-3">© 2025 TechLine. Todos os direitos reservados.</div>
-    </div>
-  </footer>
-
-  <!-- Small JS for interactivity -->
+  <!-- JS: interatividade e envio para WhatsApp -->
   <script>
-    // Prefill service for form
-    function prefillService(name){
-      document.getElementById('serviceSelect').value = name;
-      document.getElementById('details').focus();
-      window.scrollTo({top: document.getElementById('contact').offsetTop - 80, behavior: 'smooth'});
+    function prefillService(name) {
+      const sel = document.getElementById('serviceSelect');
+      if (sel) sel.value = name;
+      const details = document.getElementById('details');
+      if (details) details.focus();
+      const contact = document.getElementById('contact');
+      if (contact) window.scrollTo({top: contact.offsetTop - 60, behavior: 'smooth'});
     }
 
-    // Form submit -> opens WhatsApp with message
-    function submitForm(e){
+    function submitForm(e) {
       e.preventDefault();
       const name = document.getElementById('name').value.trim();
       const phone = document.getElementById('phone').value.trim();
       const email = document.getElementById('email').value.trim();
       const service = document.getElementById('serviceSelect').value || 'Serviço não especificado';
       const details = document.getElementById('details').value.trim();
-
-      const message = `Orçamento%20-%20${encodeURIComponent(name)}%20(${encodeURIComponent(phone)})%0A%0AService:%20${encodeURIComponent(service)}%0A%0ADetalhes:%20${encodeURIComponent(details)}${email ? '%0A%0AEmail:%20' + encodeURIComponent(email) : ''}`;
-      const wa = `https://wa.me/5537998400037?text=${message}`;
-      window.open(wa, '_blank');
+      const message = `Orçamento - ${encodeURIComponent(name)} (${encodeURIComponent(phone)})%0A%0AServiço: ${encodeURIComponent(service)}%0A%0ADetalhes: ${encodeURIComponent(details)}${email ? '%0A%0AEmail: ' + encodeURIComponent(email) : ''}`;
+      window.open(`https://wa.me/5537998400037?text=${message}`, '_blank');
       return false;
     }
 
-    function resetForm(){ document.getElementById('quoteForm').reset(); }
+    function resetForm() { const form = document.getElementById('quoteForm'); if (form) form.reset(); }
 
-    // Chat widget
-    const openChatBtn = document.getElementById('openChat');
-    const chatPanel = document.getElementById('chatPanel');
-    openChatBtn.addEventListener('click', ()=>{ chatPanel.classList.toggle('hidden'); });
-    function closeChat(){ chatPanel.classList.add('hidden'); }
-    function sendChat(){
-      const nm = document.getElementById('chatName').value.trim();
-      const ph = document.getElementById('chatPhone').value.trim();
-      const msg = document.getElementById('chatMsg').value.trim();
-      if(!ph || !msg) { alert('Informe telefone e mensagem'); return; }
-      const text = `Atendimento%20-%20${encodeURIComponent(nm)}%20(${encodeURIComponent(ph)})%0A%0A${encodeURIComponent(msg)}`;
-      const wa = `https://wa.me/5537998400037?text=${text}`;
-      window.open(wa, '_blank');
-    }
+    // Smooth scroll for quote button
+    const quoteBtn = document.getElementById('quoteBtn');
+    if (quoteBtn) quoteBtn.addEventListener('click', ()=>{ const contact = document.getElementById('contact'); if(contact) window.scrollTo({top: contact.offsetTop - 60, behavior:'smooth'}); });
 
-    // Quote button scroll
-    document.getElementById('quoteBtn').addEventListener('click', ()=>{ window.scrollTo({top: document.getElementById('contact').offsetTop - 60, behavior:'smooth'}); });
-
-    // Mobile WA header link
-    const mobileWA = document.getElementById('mobileWA'); if(mobileWA) mobileWA.href = 'https://wa.me/5537998400037?text=Olá,%20quero%20informações';
-
-    // Accessibility: focus management when hash changes
-    window.addEventListener('hashchange', ()=>{ const id = location.hash.replace('#',''); const el = document.getElementById(id); if(el) el.setAttribute('tabindex','-1') || el.focus(); });
+    // Chat widget handlers (if you add widget later)
+    // accessibility: trap focus on hash change
+    window.addEventListener('hashchange', ()=>{ const id = location.hash.replace('#',''); const el = document.getElementById(id); if(el) { el.setAttribute('tabindex','-1'); el.focus(); }});
   </script>
-
-  <!-- README & Deploy Instructions (copy to README.md) -->
-  <!--
-  DEPLOY NA VERCEL (passo-a-passo rápido):
-  1. Crie uma conta em https://vercel.com
-  2. Clique em "New Project" → "Import" → selecione seu repositório Git (ou clique em "Deploy" e arraste/solte este arquivo index.html)
-  3. Selecione "Framework Preset: Other" se solicitado.
-  4. Pressione "Deploy". O Vercel fará upload e publicará o site.
-
-  Arquivos recomendados ao publicar:
-  - index.html (este arquivo)
-  - /assets/ (pasta com logos e imagens) — já usamos caminhos absolutos para os arquivos enviados.
-
-  Melhorias opcionais (próximos passos):
-  - Adicionar imagens reais da oficina na pasta /assets
-  - Conectar um domínio próprio (na Vercel → Settings → Domains)
-  - Adicionar Google Analytics / GA4 (colocar script de medição no <head>)
-  - Configurar meta tags adicionais e sitemap.xml para SEO (posso gerar para você)
-
-  Se quiser, eu preparo o ZIP com todos os arquivos e um README.md pronto para você subir no GitHub e conectar na Vercel.
-  -->
 
 </body>
 </html>
+
