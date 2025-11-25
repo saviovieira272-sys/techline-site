@@ -1,313 +1,147 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TechLine — Serviços de Informática</title>
-  <meta name="description" content="TechLine: manutenção, formatação, montagem, suporte remoto e consultoria. Atendimento rápido e preço justo.">
-  <meta name="author" content="TechLine">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="TechLine — Serviços de Informática" />
-  <meta property="og:description" content="Serviços rápidos e confiáveis em manutenção, suporte e consultoria. Deixe seu equipamento nas mãos de quem entende." />
-  <meta property="og:image" content="/mnt/data/Design sem nome (6).png" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TechLine — Serviços de Informática" />
-  <meta name="twitter:description" content="Serviços rápidos e confiáveis em manutenção, suporte e consultoria." />
-  <meta name="twitter:image" content="/mnt/data/Design sem nome (6).png" />
-
-  <!-- Favicon (uses uploaded file path) -->
-  <link rel="icon" href="/mnt/data/Design sem nome (6).png" />
-
-  <!-- Tailwind for quick styling -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#0B57D0', /* azul */
-            gold: '#D4AF37',    /* dourado */
-            contrast: '#000000'
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techline Informática</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0d0d0d;
+            color: #ffffff;
         }
-      }
-    }
-  </script>
 
-  <style>
-    /* Small custom tweaks */
-    .glass { background: rgba(255,255,255,0.75); backdrop-filter: blur(6px); }
-    .card-hover { transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s; }
-    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(2,6,23,0.12); }
-    .chat-bubble { animation: float 3s ease-in-out infinite; }
-    @keyframes float { 0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)} }
-    :focus{ outline: 3px solid rgba(11,87,208,.18); outline-offset: 2px; }
-    /* small responsive fix for long filenames */
-    img { image-rendering: auto; max-width: 100%; height: auto; display: block; }
-  </style>
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #111;
+            border-bottom: 2px solid #1f1f1f;
+        }
+
+        header img.logo {
+            height: 55px;
+        }
+
+        nav a {
+            color: #fff;
+            margin-left: 20px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #00c8ff;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #00111c, #00394d);
+        }
+
+        .hero img {
+            width: 130px;
+            border-radius: 50%;
+            border: 3px solid #00c8ff;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            opacity: .8;
+        }
+
+        .services {
+            padding: 60px 30px;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: #141414;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 25px;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #00c8ff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #0f0f0f;
+            margin-top: 40px;
+            border-top: 2px solid #1f1f1f;
+            font-size: 14px;
+            opacity: .6;
+        }
+    </style>
 </head>
-<body class="antialiased text-contrast bg-white">
 
-  <!-- Header -->
-  <header class="fixed w-full top-0 left-0 z-50">
-    <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between glass border-b">
-      <div class="flex items-center gap-3">
-        <!-- logo (icon) -->
-        <img src="/mnt/data/Design sem nome (6).png" alt="TechLine logo" class="h-12 w-12 object-contain" />
-        <div>
-          <div class="font-semibold text-primary text-xl">TechLine</div>
-          <div class="text-xs text-slate-600">Confiança em cada reparo</div>
-        </div>
-      </div>
+<body>
 
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#home" class="hover:text-primary">Home</a>
-        <a href="#services" class="hover:text-primary">Serviços</a>
-        <a href="#about" class="hover:text-primary">Sobre</a>
-        <a href="#contact" class="px-4 py-2 bg-primary text-white rounded-lg">Contato</a>
-      </nav>
-
-      <div class="md:hidden">
-        <a id="mobileWA" href="https://wa.me/5537998400037?text=Olá,%20quero%20informações" class="px-3 py-2 bg-primary text-white rounded">WhatsApp</a>
-      </div>
-    </div>
-  </header>
-
-  <main class="pt-20">
+    <!-- HEADER -->
+    <header>
+        <img src="design01.png" class="logo" alt="Techline Logo">
+        <nav>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+            <a href="#sobre">Sobre</a>
+        </nav>
+    </header>
 
     <!-- HERO -->
-    <section id="home" class="relative overflow-hidden bg-gradient-to-b from-white to-slate-50">
-      <div class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
-        <div class="space-y-6">
-          <h1 class="text-4xl md:text-5xl font-extrabold text-primary">TechLine — rapidez, confiança e transparência</h1>
-          <p class="text-slate-700">Oferecemos serviços rápidos e confiáveis em manutenção, suporte e consultoria. Deixe seu equipamento nas mãos de quem entende.</p>
-
-          <div class="flex gap-3 mt-4">
-            <a href="#services" class="px-6 py-3 bg-primary text-white rounded-lg shadow">Ver serviços</a>
-            <button id="quoteBtn" class="px-6 py-3 border border-slate-300 rounded-lg">Solicitar orçamento</button>
-          </div>
-
-          <div class="mt-6 grid grid-cols-2 gap-4 text-sm text-slate-600">
-            <div>
-              <strong class="block">Garantia</strong>
-              <span>30 dias em serviços selecionados</span>
-            </div>
-            <div>
-              <strong class="block">Atendimento</strong>
-              <span>Resposta rápida via WhatsApp</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card com imagem do técnico -->
-        <div class="w-full flex justify-center">
-          <div class="w-full max-w-md rounded-2xl shadow-xl overflow-hidden border card-hover">
-            <!-- avatar (usando a imagem 'design.png' enviada) -->
-            <img src="/mnt/data/design.png" alt="Técnico - TechLine" class="w-full object-cover h-72" />
-            <div class="p-4 bg-white">
-              <h3 class="font-semibold">Técnico</h3>
-              <p class="text-sm text-slate-500 mt-2">Atendimento especializado para seu equipamento.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section class="hero">
+        <img src="design.png" alt="Avatar Techline">
+        <h1>Techline Informática</h1>
+        <p>Assistência técnica, manutenção, upgrades e suporte especializado</p>
     </section>
 
     <!-- SERVIÇOS -->
-    <section id="services" class="max-w-6xl mx-auto px-6 py-16">
-      <div class="flex items-center justify-between">
-        <div>
-          <h2 class="text-2xl font-bold">Nossos serviços</h2>
-          <p class="text-slate-600 mt-1">Preços claros e atendimento profissional.</p>
+    <section class="services" id="servicos">
+        <h2>Nossos Serviços</h2>
+
+        <div class="cards">
+            <div class="card">🔧 Manutenção de Computadores</div>
+            <div class="card">💻 Formatação com Backup</div>
+            <div class="card">🚀 Otimização de Desempenho</div>
+            <div class="card">🧼 Limpeza interna e térmica</div>
+            <div class="card">🔌 Troca de Peças</div>
+            <div class="card">🛠 Montagem de PCs</div>
         </div>
-      </div>
-
-      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Formatação -->
-        <article class="bg-white rounded-2xl p-6 border card-hover">
-          <div class="flex items-center justify-between">
-            <div>
-              <h3 class="font-semibold text-lg">Formatação</h3>
-              <p class="text-sm text-slate-500 mt-1">Formatação completa e instalação de sistema.</p>
-            </div>
-            <div class="text-3xl">🖥️</div>
-          </div>
-          <div class="mt-4 font-medium">R$ 90 <span class="text-slate-500 font-normal">(sem backup)</span><br>R$ 100 <span class="text-slate-500 font-normal">(com backup)</span></div>
-          <div class="mt-4 flex gap-2">
-            <a class="px-3 py-2 bg-primary text-white rounded" href="https://wa.me/5537998400037?text=Olá,%20quero%20orçamento%20para%20Formatação">Pedir orçamento</a>
-            <button class="px-3 py-2 border rounded" onclick="prefillService('Formatação')">Selecionar</button>
-          </div>
-        </article>
-
-        <!-- Consultoria -->
-        <article class="bg-white rounded-2xl p-6 border card-hover">
-          <div class="flex items-center justify-between">
-            <div>
-              <h3 class="font-semibold text-lg">Consultoria</h3>
-              <p class="text-sm text-slate-500 mt-1">Orientação técnica para seu equipamento.</p>
-            </div>
-            <div class="text-3xl">💬</div>
-          </div>
-          <div class="mt-4 font-medium">R$ 30</div>
-          <div class="mt-4 flex gap-2">
-            <a class="px-3 py-2 bg-primary text-white rounded" href="https://wa.me/5537998400037?text=Olá,%20quero%20orçamento%20para%20Consultoria">Pedir orçamento</a>
-            <button class="px-3 py-2 border rounded" onclick="prefillService('Consultoria')">Selecionar</button>
-          </div>
-        </article>
-
-        <!-- Acesso Remoto -->
-        <article class="bg-white rounded-2xl p-6 border card-hover">
-          <div class="flex items-center justify-between">
-            <div>
-              <h3 class="font-semibold text-lg">Acesso Remoto</h3>
-              <p class="text-sm text-slate-500 mt-1">Suporte remoto para resolver sem deslocamento.</p>
-            </div>
-            <div class="text-3xl">🌐</div>
-          </div>
-          <div class="mt-4 font-medium">R$ 45</div>
-          <div class="mt-4 flex gap-2">
-            <a class="px-3 py-2 bg-primary text-white rounded" href="https://wa.me/5537998400037?text=Olá,%20quero%20orçamento%20para%20Acesso%20Remoto">Pedir orçamento</a>
-            <button class="px-3 py-2 border rounded" onclick="prefillService('Acesso Remoto')">Selecionar</button>
-          </div>
-        </article>
-
-        <!-- Montagem -->
-        <article class="bg-white rounded-2xl p-6 border card-hover">
-          <div class="flex items-center justify-between">
-            <div>
-              <h3 class="font-semibold text-lg">Montagem</h3>
-              <p class="text-sm text-slate-500 mt-1">Montagem profissional de PCs e upgrades.</p>
-            </div>
-            <div class="text-3xl">🧩</div>
-          </div>
-          <div class="mt-4 font-medium">R$ 150</div>
-          <div class="mt-4 flex gap-2">
-            <a class="px-3 py-2 bg-primary text-white rounded" href="https://wa.me/5537998400037?text=Olá,%20quero%20orçamento%20para%20Montagem">Pedir orçamento</a>
-            <button class="px-3 py-2 border rounded" onclick="prefillService('Montagem')">Selecionar</button>
-          </div>
-        </article>
-
-        <!-- Visitas Técnicas -->
-        <article class="bg-white rounded-2xl p-6 border card-hover">
-          <div class="flex items-center justify-between">
-            <div>
-              <h3 class="font-semibold text-lg">Visitas Técnicas</h3>
-              <p class="text-sm text-slate-500 mt-1">Atendimento presencial quando necessário.</p>
-            </div>
-            <div class="text-3xl">🚗</div>
-          </div>
-          <div class="mt-4 font-medium">R$ 50</div>
-          <div class="mt-4 flex gap-2">
-            <a class="px-3 py-2 bg-primary text-white rounded" href="https://wa.me/5537998400037?text=Olá,%20quero%20orçamento%20para%20Visita%20Técnica">Pedir orçamento</a>
-            <button class="px-3 py-2 border rounded" onclick="prefillService('Visita Técnica')">Selecionar</button>
-          </div>
-        </article>
-
-        <!-- Limpeza Física -->
-        <article class="bg-white rounded-2xl p-6 border card-hover">
-          <div class="flex items-center justify-between">
-            <div>
-              <h3 class="font-semibold text-lg">Limpeza Física</h3>
-              <p class="text-sm text-slate-500 mt-1">Limpeza interna e externa para melhorar desempenho.</p>
-            </div>
-            <div class="text-3xl">🔧</div>
-          </div>
-          <div class="mt-4 font-medium">Valor sob consulta</div>
-          <div class="mt-4 flex gap-2">
-            <a class="px-3 py-2 bg-primary text-white rounded" href="https://wa.me/5537998400037?text=Olá,%20quero%20orçamento%20para%20Limpeza%20Física">Pedir orçamento</a>
-            <button class="px-3 py-2 border rounded" onclick="prefillService('Limpeza Física')">Selecionar</button>
-          </div>
-        </article>
-
-      </div>
     </section>
 
-    <!-- SOBRE -->
-    <section id="about" class="bg-primary text-white py-12">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-4">Sobre a TechLine</h2>
-        <p class="text-lg">Oferecemos serviços rápidos e confiáveis em manutenção, suporte e consultoria. Deixe seu equipamento nas mãos de quem entende.</p>
-      </div>
-    </section>
-
-    <!-- CONTATO -->
-    <section id="contact" class="max-w-4xl mx-auto px-6 py-12">
-      <div class="bg-white rounded-2xl p-6 border shadow">
-        <h3 class="text-2xl font-semibold mb-2">Solicitar orçamento</h3>
-        <p class="text-sm text-slate-600 mb-4">Preencha e envie — abriremos uma conversa no WhatsApp com os dados.</p>
-        <form id="quoteForm" class="grid gap-3" onsubmit="return submitForm(event)">
-          <input id="name" required class="p-3 border rounded" placeholder="Nome completo" />
-          <input id="phone" required class="p-3 border rounded" placeholder="Telefone (Ex: 37 9xxxx-xxxx)" />
-          <input id="email" class="p-3 border rounded" placeholder="E-mail (opcional)" />
-          <select id="serviceSelect" class="p-3 border rounded">
-            <option value="">Escolha o serviço</option>
-            <option>Formatação</option>
-            <option>Consultoria</option>
-            <option>Acesso Remoto</option>
-            <option>Montagem</option>
-            <option>Visita Técnica</option>
-            <option>Limpeza Física</option>
-          </select>
-          <textarea id="details" required class="p-3 border rounded h-28" placeholder="Descreva o problema"></textarea>
-          <div class="flex gap-3">
-            <button type="submit" class="px-4 py-2 bg-primary text-white rounded">Enviar via WhatsApp</button>
-            <button type="button" class="px-4 py-2 border rounded" onclick="resetForm()">Limpar</button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- RODAPÉ -->
-    <footer class="mt-12 bg-slate-900 text-white py-6">
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <div class="flex items-center justify-center gap-4 mb-2">
-          <img src="/mnt/data/Design sem nome.png" class="h-8 object-contain" alt="TechLine com nome" />
-          <div class="text-sm">TechLine — Suporte, manutenção e montagem</div>
-        </div>
-        <div class="text-sm">Telefone/WhatsApp: <a href="https://wa.me/5537998400037" class="text-gold">(37) 99840-0037</a> — Instagram: <a href="https://instagram.com/techline._" class="text-gold">@techline._</a></div>
-        <div class="text-xs text-slate-400 mt-3">© 2025 TechLine. Todos os direitos reservados.</div>
-      </div>
+    <!-- FOOTER -->
+    <footer>
+        © 2025 Techline Informática — Todos os direitos reservados.
     </footer>
-  </main>
-
-  <!-- JS: interatividade e envio para WhatsApp -->
-  <script>
-    function prefillService(name) {
-      const sel = document.getElementById('serviceSelect');
-      if (sel) sel.value = name;
-      const details = document.getElementById('details');
-      if (details) details.focus();
-      const contact = document.getElementById('contact');
-      if (contact) window.scrollTo({top: contact.offsetTop - 60, behavior: 'smooth'});
-    }
-
-    function submitForm(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const service = document.getElementById('serviceSelect').value || 'Serviço não especificado';
-      const details = document.getElementById('details').value.trim();
-      const message = `Orçamento - ${encodeURIComponent(name)} (${encodeURIComponent(phone)})%0A%0AServiço: ${encodeURIComponent(service)}%0A%0ADetalhes: ${encodeURIComponent(details)}${email ? '%0A%0AEmail: ' + encodeURIComponent(email) : ''}`;
-      window.open(`https://wa.me/5537998400037?text=${message}`, '_blank');
-      return false;
-    }
-
-    function resetForm() { const form = document.getElementById('quoteForm'); if (form) form.reset(); }
-
-    // Smooth scroll for quote button
-    const quoteBtn = document.getElementById('quoteBtn');
-    if (quoteBtn) quoteBtn.addEventListener('click', ()=>{ const contact = document.getElementById('contact'); if(contact) window.scrollTo({top: contact.offsetTop - 60, behavior:'smooth'}); });
-
-    // Chat widget handlers (if you add widget later)
-    // accessibility: trap focus on hash change
-    window.addEventListener('hashchange', ()=>{ const id = location.hash.replace('#',''); const el = document.getElementById(id); if(el) { el.setAttribute('tabindex','-1'); el.focus(); }});
-  </script>
 
 </body>
 </html>
+
+
 
