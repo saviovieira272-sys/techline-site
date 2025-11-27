@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Line</title>
     <style>
-        /* RESET E BASE */
+        /* ======= RESET ======= */
         * {
             margin: 0;
             padding: 0;
@@ -23,13 +23,13 @@
             color: inherit;
         }
 
-        /* NAVBAR */
+        /* ======= NAVBAR ======= */
         nav {
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
-            background-color: #0f0f0f;
+            background-color: #0f0f0f; /* Mantido do site original */
             color: #fff;
             padding: 15px 50px;
             display: flex;
@@ -62,11 +62,11 @@
             color: #00b4d8;
         }
 
-        /* BANNER PRINCIPAL */
+        /* ======= BANNER PRINCIPAL ======= */
         .banner {
             width: 100%;
             height: 90vh;
-            background: #1a1a1a url("null") center/cover no-repeat;
+            background: #1a1a1a url("null") center/cover no-repeat; /* Mantido original */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -84,10 +84,10 @@
             font-size: 1.2em;
         }
 
-        /* SEÇÃO DE SERVIÇOS */
+        /* ======= SEÇÃO DE SERVIÇOS ======= */
         .services {
             padding: 100px 50px 50px;
-            background-color: #f9f9f9;
+            background-color: #f9f9f9; /* Mantido original */
         }
 
         .services h2 {
@@ -134,13 +134,12 @@
             color: #666;
         }
 
-        /* SOBRE */
-        .about {
+        /* ======= NOVAS SEÇÕES ======= */
+        .about, .testimonials, .faq {
             padding: 100px 50px;
-            background-color: #fff;
         }
 
-        .about h2 {
+        .about h2, .testimonials h2, .faq h2 {
             text-align: center;
             margin-bottom: 50px;
             font-size: 2.5em;
@@ -174,19 +173,6 @@
         .about-image img {
             width: 100%;
             border-radius: 10px;
-        }
-
-        /* DEPOIMENTOS */
-        .testimonials {
-            padding: 100px 50px;
-            background-color: #f9f9f9;
-        }
-
-        .testimonials h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5em;
-            color: #0f0f0f;
         }
 
         .testimonial-cards {
@@ -223,19 +209,6 @@
             color: #0f0f0f;
         }
 
-        /* FAQ */
-        .faq {
-            padding: 100px 50px;
-            background-color: #fff;
-        }
-
-        .faq h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5em;
-            color: #0f0f0f;
-        }
-
         .faq-item {
             margin-bottom: 30px;
         }
@@ -264,7 +237,7 @@
             display: block;
         }
 
-        /* FOOTER */
+        /* ======= FOOTER ======= */
         footer {
             background-color: #0f0f0f;
             color: #fff;
@@ -276,7 +249,7 @@
             color: #00b4d8;
         }
 
-        /* RESPONSIVO */
+        /* ======= RESPONSIVO ======= */
         @media(max-width: 768px) {
             .service-cards, .testimonial-cards, .about-content {
                 flex-direction: column;
@@ -295,7 +268,7 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
+    <!-- NAVBAR FIXA -->
     <nav>
         <div class="logo">Tech Line</div>
         <ul>
@@ -315,7 +288,7 @@
         </div>
     </section>
 
-    <!-- SERVIÇOS -->
+    <!-- SEÇÃO DE SERVIÇOS EXISTENTE -->
     <section class="services" id="services">
         <h2>Nossos Serviços</h2>
         <div class="service-cards">
@@ -337,13 +310,14 @@
         </div>
     </section>
 
+    <!-- NOVAS SEÇÕES ADICIONADAS -->
+
     <!-- SOBRE -->
     <section class="about" id="about">
         <h2>Sobre Nós</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>A Tech Line é uma empresa dedicada a oferecer soluções completas em informática, garantindo qualidade, confiabilidade e atendimento personalizado para cada cliente.</p>
-                <p>Nosso objetivo é facilitar a vida digital de pessoas e empresas, entregando resultados rápidos e eficientes.</p>
+                <p>A Tech Line oferece soluções completas em informática, garantindo qualidade e atendimento personalizado.</p>
             </div>
             <div class="about-image">
                 <img src="null" alt="Sobre a Tech Line">
@@ -357,17 +331,17 @@
         <div class="testimonial-cards">
             <div class="testimonial-card">
                 <img src="null" alt="Cliente 1">
-                <p>Serviço rápido e eficiente, meu computador nunca esteve tão rápido!</p>
+                <p>Serviço rápido e eficiente, recomendo!</p>
                 <h4>João Silva</h4>
             </div>
             <div class="testimonial-card">
                 <img src="null" alt="Cliente 2">
-                <p>Equipe profissional e atendimento excelente, recomendo a todos.</p>
+                <p>Equipe profissional e atendimento excelente.</p>
                 <h4>Maria Santos</h4>
             </div>
             <div class="testimonial-card">
                 <img src="null" alt="Cliente 3">
-                <p>Montaram meu PC exatamente como eu queria, resultado perfeito.</p>
+                <p>Montaram meu PC exatamente como eu queria.</p>
                 <h4>Carlos Oliveira</h4>
             </div>
         </div>
@@ -392,7 +366,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2025 Tech Line. Todos os direitos reservados. <a href="#">Política de Privacidade</a></p>
+        <p>&copy; 2025 Tech Line. Todos os direitos reservados.</p>
     </footer>
 
     <script>
