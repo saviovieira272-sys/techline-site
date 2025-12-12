@@ -1,573 +1,257 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TechLine — Informática em Formiga, MG • Manutenção e Suporte</title>
-  <meta name="description" content="TechLine Formiga (MG) — manutenção, formatação, montagem, suporte remoto e consultoria. Atendimento rápido, garantia e preço justo." />
-  <meta name="keywords" content="TechLine, informática, manutenção, formatação, montagem, consultoria, suporte remoto, Formiga, MG" />
-  <meta name="author" content="TechLine" />
-  <meta name="theme-color" content="#0B57D0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sonho Real Empréstimos</title>
 
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="TechLine — Serviços de Informática em Formiga, MG" />
-  <meta property="og:description" content="Serviços rápidos e confiáveis em manutenção, suporte e consultoria. Deixe seu equipamento nas mãos de quem entende." />
-  <meta property="og:image" content="design01.png" />
-  <meta property="og:type" content="website" />
+    <!-- Fonte moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TechLine — Serviços de Informática" />
-  <meta name="twitter:description" content="Serviços rápidos e confiáveis em manutenção, suporte e consultoria." />
-  <meta name="twitter:image" content="design01.png" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="design02.png" />
-
-  <!-- Preconnects to speed up external calls -->
-  <link rel="preconnect" href="https://wa.me" crossorigin>
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#0B57D0',
-            gold: '#D4AF37',
-            contrast: '#000000'
-          },
-          boxShadow: {
-            'xl-soft': '0 20px 40px rgba(2,6,23,0.08)'
-          }
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://i.imgur.com/Yq7Z6uM.png'); /* Fundo azul texturizado */
+            background-size: cover;
+            background-attachment: fixed;
         }
-      }
-    }
-  </script>
 
-  <style>
-    :root {
-      --primary: #0B57D0;
-      --gold: #D4AF37;
-      --muted: #475569; /* increased contrast */
-      --bg: #ffffff;
-      --card-bg: #ffffff;
-    }
-    html,body{height:100%}
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:var(--bg);color:#0b0b0b;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-    .glass{background:rgba(255,255,255,0.86);backdrop-filter:blur(6px)}
-    .card-hover{transition:transform .28s cubic-bezier(.2,.9,.2,1),box-shadow .28s}
-    .card-hover:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(2,6,23,0.08)}
-    .floating{animation:float 3s ease-in-out infinite}
-    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
-    .reveal{opacity:0;transform:translateY(12px);transition:all .6s ease}
-    .reveal.in{opacity:1;transform:translateY(0)}
-    .price{font-weight:700;color:var(--primary)}
-    .gold-txt{color:var(--gold)}
-    :focus{outline:3px solid rgba(11,87,208,.18);outline-offset:2px}
-    .container{max-width:1100px;margin:0 auto;padding:0 18px}
-    img{display:block;max-width:100%}
+        /* ---------------- CABEÇALHO ---------------- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(0, 40, 120, 0.7);
+            backdrop-filter: blur(6px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    /* small accessible helpers */
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        header img {
+            height: 60px;
+        }
 
-    /* Mobile nav animation */
-    .mobile-nav{transition:max-height .28s ease;overflow:hidden}
+        nav a {
+            margin: 0 15px;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+        }
 
-    /* make details summary more visible */
-    details > summary{list-style:none}
-    details[open] > summary::after{content:" ▲"}
-    details > summary::after{content:" ▼";margin-left:6px;color:var(--muted)}
-  </style>
+        nav a:hover {
+            color: #ff7b00;
+        }
+
+        /* ---------------- CARROSSEL ---------------- */
+        .carousel {
+            width: 100%;
+            height: 45vh; /* Altura mediana */
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 600%;
+            animation: slide 18s infinite linear; /* Velocidade reduzida */
+        }
+
+        @keyframes slide {
+            0%   { transform: translateX(0%); }
+            16%  { transform: translateX(0%); }
+            20%  { transform: translateX(-100%); }
+            36%  { transform: translateX(-100%); }
+            40%  { transform: translateX(-200%); }
+            56%  { transform: translateX(-200%); }
+            60%  { transform: translateX(-300%); }
+            76%  { transform: translateX(-300%); }
+            80%  { transform: translateX(-400%); }
+            96%  { transform: translateX(-400%); }
+            100% { transform: translateX(-500%); }
+        }
+
+        /* ---------------- IMAGENS EXPLICATIVAS ---------------- */
+        .servicos {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .servicos h2 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .servico-box {
+            background: white;
+            padding: 25px;
+            margin: 25px auto;
+            width: 70%;
+            border-radius: 15px;
+            border-top: 8px solid #ff7b00;
+            border-left: 8px solid #ff7b00;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+
+        .servico-img {
+            width: 65%;
+            border-radius: 15px;
+            border: 6px solid #ff7b00;
+            display: block;
+            margin: auto;
+        }
+
+        /* ---------------- SOBRE NÓS ---------------- */
+        .sobre-nos {
+            background: rgba(255,255,255,0.9);
+            padding: 50px;
+            margin-top: 40px;
+            border-radius: 20px;
+        }
+
+        .sobre-nos h2 {
+            color: #003b9b;
+        }
+
+        /* ---------------- RODAPÉ ---------------- */
+        footer {
+            background: #002460;
+            padding: 30px;
+            color: white;
+            margin-top: 40px;
+        }
+
+        /* ---------------- WHATSAPP FLUTUANTE ---------------- */
+        #whats-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25d366;
+            color: white;
+            font-size: 18px;
+            padding: 12px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        }
+
+        #cidadeMenu {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            padding: 15px;
+        }
+
+        #cidadeMenu button {
+            display: block;
+            width: 100%;
+            background: #003b9b;
+            color: white;
+            font-weight: 600;
+            border: none;
+            padding: 10px 0;
+            margin: 8px 0;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #cidadeMenu button:hover {
+            background: #ff7b00;
+        }
+    </style>
 </head>
 <body>
-  <!-- Skip link for accessibility -->
-  <a class="sr-only focus:not-sr-only p-2 bg-primary text-white fixed top-2 left-2 rounded" href="#main">Pular para o conteúdo</a>
 
-  <!-- HEADER -->
-  <header class="fixed w-full top-0 left-0 z-50 glass border-b" role="banner">
-    <div class="container flex items-center justify-between py-3">
-      <div class="flex items-center gap-3">
-        <img src="design02.png" alt="Logotipo TechLine" class="h-12 w-12 object-contain" width="48" height="48" />
-        <div>
-          <div class="text-primary font-semibold text-lg">TechLine</div>
-          <div class="text-xs" style="color:var(--muted)">Confiança em cada reparo</div>
-        </div>
-      </div>
+<header>
+    <img src="design02.png" alt="Sonho Real" />
+    <nav>
+        <a href="#carrossel">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre Nós</a>
+        <a href="#unidades">Unidades</a>
+    </nav>
+</header>
 
-      <!-- Desktop nav -->
-      <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Navegação principal">
-        <a href="#home" class="hover:text-primary">Home</a>
-        <a href="#services" class="hover:text-primary">Serviços</a>
-        <a href="#prices" class="hover:text-primary">Preços</a>
-        <a href="#about" class="hover:text-primary">Sobre</a>
-        <a href="#contact" class="px-4 py-2 bg-primary text-white rounded-lg" role="button">Contato</a>
-      </nav>
-
-      <!-- Mobile actions -->
-      <div class="md:hidden flex items-center gap-2">
-        <button id="mobileMenuBtn" aria-controls="mobileNav" aria-expanded="false" aria-label="Abrir menu" class="p-2 rounded focus:ring-2 focus:ring-offset-2 focus:ring-primary">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-        <a id="mobileWA" aria-label="WhatsApp" href="https://wa.me/5537998400037?text=Olá,%20quero%20informações" class="px-3 py-2 bg-primary text-white rounded">WhatsApp</a>
-      </div>
+<!-- ---------------- CARROSSEL ---------------- -->
+<section id="carrossel" class="carousel">
+    <div class="carousel-track">
+        <img src="foto02.jpeg" />
+        <img src="foto03.jpeg" />
+        <img src="foto04.jpeg" />
+        <img src="foto05.jpeg" />
+        <img src="foto06.jpeg" />
     </div>
+</section>
 
-    <!-- Mobile nav (collapsible) -->
-    <div id="mobileNav" class="mobile-nav md:hidden bg-white border-t" style="max-height:0;">
-      <div class="container py-3 flex flex-col gap-3">
-        <a href="#home" class="block">Home</a>
-        <a href="#services" class="block">Serviços</a>
-        <a href="#prices" class="block">Preços</a>
-        <a href="#about" class="block">Sobre</a>
-        <a href="#contact" class="block">Contato</a>
-      </div>
-    </div>
-  </header>
+<!-- ---------------- IMAGENS + SERVIÇOS ---------------- -->
+<section class="servicos" id="servicos">
+    <h2>Serviços Explicados</h2>
 
-  <main id="main" class="pt-24" role="main">
+    <img class="servico-img" src="foto07.jpeg" />
+    <div class="servico-box">Empréstimo consignado INSS explicado aqui...</div>
 
-    <!-- HERO -->
-    <section id="home" class="py-16 bg-white">
-      <div class="container grid md:grid-cols-2 gap-10 items-center">
-        <div class="reveal" data-reveal>
-          <h1 class="text-4xl md:text-5xl font-extrabold text-primary leading-tight">TechLine — rapidez, confiança e transparência</h1>
-          <p class="mt-4 text-lg text-slate-700">Oferecemos serviços rápidos e confiáveis em manutenção, suporte e consultoria. Atendimento presencial e remoto — garantia e transparência em cada serviço.</p>
+    <img class="servico-img" src="foto08.jpeg" />
+    <div class="servico-box">Portabilidade e refinanciamento explicados aqui...</div>
 
-          <div class="flex gap-3 mt-6">
-            <a href="#services" class="px-6 py-3 bg-primary text-white rounded-lg shadow" role="button">Ver serviços</a>
-            <button id="quoteBtn" class="px-6 py-3 border border-slate-300 rounded-lg" aria-controls="contact">Solicitar orçamento</button>
-          </div>
+    <img class="servico-img" src="foto09.jpeg" />
+    <div class="servico-box">Antecipação de FGTS e outros benefícios...</div>
+</section>
 
-          <div class="mt-6 grid grid-cols-2 gap-6 text-sm text-slate-600">
-            <div><strong>Garantia</strong><div>30 dias em serviços selecionados</div></div>
-            <div><strong>Atendimento</strong><div>Resposta rápida via WhatsApp</div></div>
-          </div>
+<!-- ---------------- SOBRE NÓS ---------------- -->
+<section class="sobre-nos" id="sobre">
+    <h2>Quem Somos</h2>
+    <p>A Sonho Real Empréstimos é uma empresa especializada em crédito consignado...</p>
 
-          <div class="mt-6 flex flex-wrap gap-3">
-            <div class="p-3 bg-slate-50 rounded-lg border text-sm">Atendimento Rápido</div>
-            <div class="p-3 bg-slate-50 rounded-lg border text-sm">Técnicos Certificados</div>
-            <div class="p-3 bg-slate-50 rounded-lg border text-sm">Preços Claros</div>
-          </div>
-        </div>
+    <h2>Nossa História</h2>
+    <p>Fundada em Formiga, no interior de Minas Gerais...</p>
+</section>
 
-        <div class="w-full flex justify-center reveal" data-reveal>
-          <div class="w-full max-w-md rounded-2xl shadow-xl overflow-hidden border card-hover" role="region" aria-label="Cartão técnico">
-            <img loading="lazy" src="design.png" alt="Técnico da TechLine trabalhando em notebook" class="w-full object-cover h-80" width="720" height="480" />
-            <div class="p-4 bg-white">
-              <h3 class="font-semibold">Técnico — Atendimento Especializado</h3>
-              <p class="text-sm text-slate-500 mt-2">Diagnóstico rápido, consertos e suporte com total transparência.</p>
-              <div class="mt-3 flex gap-2">
-                <a class="px-3 py-2 bg-primary text-white rounded" href="https://wa.me/5537998400037?text=Olá,%20quero%20agendar%20um%20atendimento" rel="noopener" target="_blank">Chamar no WhatsApp</a>
-                <button onclick="prefillService('Diagnóstico Rápido')" class="px-3 py-2 border rounded">Pedir Orçamento</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<!-- ---------------- IMAGEM 10 ---------------- -->
+<section class="servicos">
+    <h2>Informação Importante</h2>
+    <img class="servico-img" src="img10.jpg" />
+    <div class="servico-box">Escreva aqui sua explicação personalizada...</div>
+</section>
 
-      <!-- Banner (uses uploaded local file path you provided) -->
-      <div class="container mt-8 reveal" data-reveal>
-        <img loading="lazy" src="design03.png" alt="Banner promocional TechLine — manutenção e suporte" class="w-full rounded-lg object-cover h-56 shadow-md" width="1200" height="400"/>
-      </div>
-    </section>
+<!-- ---------------- RODAPÉ ---------------- -->
+<footer id="unidades">
+    <h3>Unidades</h3>
+    <p><b>Formiga:</b> (37) 99843-1401 - Rua João Domingos da Fonseca, 31 - Centro - Formiga MG - CNPJ: 32.851.952/0001-05</p>
+    <p><b>Arcos:</b> (37) 99861-5963 - Rua Jarbas Ferreira Pires, 465 - Centro - Arcos MG - CNPJ: 37.893.986/0001-05</p>
+    <p><b>Lagoa da Prata:</b> (37) 98803-6587 - Av. Benedito Valadares, 696 - Centro - Lagoa da Prata MG - CNPJ: 43.286.201/0001-00</p>
+</footer>
 
-    <!-- SERVICES -->
-    <section id="services" class="py-16 bg-slate-50">
-      <div class="container">
-        <div class="flex items-center justify-between mb-8">
-          <h2 class="text-3xl font-bold text-primary">Nossos serviços</h2>
-          <p class="text-slate-600">Preços claros e atendimento profissional</p>
-        </div>
+<!-- ---------------- WHATSAPP FLUTUANTE ---------------- -->
+<div id="whats-btn" onclick="toggleMenu()">WhatsApp</div>
 
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Cards: kept structure but improved accessibility -->
+<div id="cidadeMenu">
+    <button onclick="window.open('https://wa.me/5537998431401')">Formiga</button>
+    <button onclick="window.open('https://wa.me/5537998615963')">Arcos</button>
+    <button onclick="window.open('https://wa.me/5537988036587')">Lagoa da Prata</button>
+</div>
 
-          <article class="p-6 bg-white border rounded-2xl card-hover reveal" data-reveal>
-            <div class="flex items-start justify-between">
-              <div>
-                <h3 class="font-semibold text-lg">Formatação</h3>
-                <p class="text-slate-600 text-sm mt-1">Formatação completa com instalação de sistema e drivers.</p>
-              </div>
-              <div class="text-3xl" aria-hidden>🖥️</div>
-            </div>
-            <div class="mt-4">
-              <div class="price">R$ 90 <span class="text-slate-500 font-normal">sem backup</span></div>
-              <div class="price mt-1">R$ 100 <span class="text-slate-500 font-normal">com backup</span></div>
-            </div>
-            <div class="mt-4 flex gap-2">
-              <a class="px-3 py-2 bg-primary text-white rounded" href="https://wa.me/5537998400037?text=Olá,%20quero%20orçamento%20para%20Formatação" rel="noopener" target="_blank">Pedir orçamento</a>
-              <button class="px-3 py-2 border rounded" onclick="prefillService('Formatação')">Selecionar</button>
-              <button class="px-3 py-2 border rounded" onclick="toggleDetails(this)" data-details="Formatação completa: instalação do Windows, drivers, updates, otimizações e verificação de hardware.">Mais info</button>
-            </div>
-          </article>
+<script>
+function toggleMenu() {
+    var menu = document.getElementById('cidadeMenu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+</script>
 
-          <!-- Other service cards omitted for brevity in the code editor view but are present in the full file -->
-
-          <article class="p-6 bg-white border rounded-2xl card-hover reveal" data-reveal>
-            <div class="flex items-start justify-between">
-              <div>
-                <h3 class="font-semibold text-lg">Consultoria</h3>
-                <p class="text-slate-600 text-sm mt-1">Orientação técnica e recomendações personalizadas.</p>
-              </div>
-              <div class="text-3xl" aria-hidden>💬</div>
-            </div>
-            <div class="mt-4"><div class="price">R$ 30</div></div>
-            <div class="mt-4 flex gap-2">
-              <a class="px-3 py-2 bg-primary text-white rounded" href="https://wa.me/5537998400037?text=Olá,%20quero%20orçamento%20para%20Consultoria" rel="noopener" target="_blank">Pedir orçamento</a>
-              <button class="px-3 py-2 border rounded" onclick="prefillService('Consultoria')">Selecionar</button>
-              <button class="px-3 py-2 border rounded" onclick="toggleDetails(this)" data-details="Consultoria técnica: análise do equipamento, recomendações de upgrade, custo-benefício e planejamento.">Mais info</button>
-            </div>
-          </article>
-
-          <article class="p-6 bg-white border rounded-2xl card-hover reveal" data-reveal>
-            <div class="flex items-start justify-between">
-              <div>
-                <h3 class="font-semibold text-lg">Acesso Remoto</h3>
-                <p class="text-slate-600 text-sm mt-1">Suporte remoto para resolver sem deslocamento.</p>
-              </div>
-              <div class="text-3xl" aria-hidden>🌐</div>
-            </div>
-            <div class="mt-4"><div class="price">R$ 45</div></div>
-            <div class="mt-4 flex gap-2">
-              <a class="px-3 py-2 bg-primary text-white rounded" href="https://wa.me/5537998400037?text=Olá,%20quero%20orçamento%20para%20Acesso%20Remoto" rel="noopener" target="_blank">Pedir orçamento</a>
-              <button class="px-3 py-2 border rounded" onclick="prefillService('Acesso Remoto')">Selecionar</button>
-              <button class="px-3 py-2 border rounded" onclick="toggleDetails(this)" data-details="Acesso remoto seguro por ferramentas autorizadas. Diagnóstico, ajustes e limpeza de software.">Mais info</button>
-            </div>
-          </article>
-
-          <!-- remaining service cards (Montagem, Visita, Limpeza) kept same structure and accessibility improvements -->
-
-        </div>
-      </div>
-    </section>
-
-    <!-- PRICING -->
-    <section id="prices" class="py-16">
-      <div class="container">
-        <h2 class="text-3xl font-bold text-primary mb-6 text-center">Tabela de Preços</h2>
-
-        <div class="grid gap-6 md:grid-cols-3">
-          <div class="bg-white p-6 rounded-xl border text-center card-hover reveal" data-reveal>
-            <div class="text-xl font-semibold mb-2">Pacote Básico</div>
-            <div class="text-slate-600 mb-4">Ideal para manutenção simples</div>
-            <div class="text-4xl price mb-4">R$ 90</div>
-            <ul class="text-left text-sm mb-4">
-              <li>Formatação sem backup</li>
-              <li>Instalação de drivers</li>
-              <li>Checagem de hardware básica</li>
-            </ul>
-            <a href="https://wa.me/5537998400037?text=Olá,%20quero%20contratar%20o%20Pacote%20Básico" rel="noopener" target="_blank" class="inline-block bg-primary text-white px-6 py-2 rounded">Contratar</a>
-          </div>
-
-          <div class="bg-white p-6 rounded-xl border text-center card-hover reveal" data-reveal>
-            <div class="text-xl font-semibold mb-2">Pacote Completo <span class="sr-only">(mais escolhido)</span></div>
-            <div class="text-slate-600 mb-4">Com backup e otimizações</div>
-            <div class="text-4xl price mb-4">R$ 150</div>
-            <ul class="text-left text-sm mb-4">
-              <li>Formatação com backup</li>
-              <li>Remoção de vírus</li>
-              <li>Otimização de desempenho</li>
-            </ul>
-            <a href="https://wa.me/5537998400037?text=Olá,%20quero%20contratar%20o%20Pacote%20Completo" rel="noopener" target="_blank" class="inline-block bg-primary text-white px-6 py-2 rounded">Contratar</a>
-          </div>
-
-          <div class="bg-white p-6 rounded-xl border text-center card-hover reveal" data-reveal>
-            <div class="text-xl font-semibold mb-2">Visita Técnica</div>
-            <div class="text-slate-600 mb-4">Atendimento no local</div>
-            <div class="text-4xl price mb-4">R$ 50</div>
-            <ul class="text-left text-sm mb-4">
-              <li>Diagnóstico presencial</li>
-              <li>Orçamento no local</li>
-              <li>Execução conforme necessidade</li>
-            </ul>
-            <a href="https://wa.me/5537998400037?text=Olá,%20quero%20contratar%20a%20Visita%20Técnica" rel="noopener" target="_blank" class="inline-block bg-primary text-white px-6 py-2 rounded">Contratar</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="py-16 bg-slate-50">
-      <div class="container">
-        <h2 class="text-3xl font-bold text-primary mb-8 text-center">O que os clientes dizem</h2>
-        <div class="grid gap-6 md:grid-cols-3">
-          <div class="bg-white p-6 rounded-xl border card-hover reveal" data-reveal>
-            <p class="text-slate-700">"Rápido e eficiente — meu notebook voltou a funcionar como novo!"</p>
-            <div class="mt-4 font-semibold">— João S.</div>
-          </div>
-          <div class="bg-white p-6 rounded-xl border card-hover reveal" data-reveal>
-            <p class="text-slate-700">"Preço justo e atendimento excelente. Recomendo a TechLine."</p>
-            <div class="mt-4 font-semibold">— Maria L.</div>
-          </div>
-          <div class="bg-white p-6 rounded-xl border card-hover reveal" data-reveal>
-            <p class="text-slate-700">"Fizeram backup, reinstalaram e entregaram tudo funcionando. Nota 10."</p>
-            <div class="mt-4 font-semibold">— Carlos P.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-16">
-      <div class="container max-w-3xl mx-auto">
-        <h2 class="text-3xl font-bold text-primary mb-6 text-center">Perguntas Frequentes</h2>
-        <div class="space-y-4">
-          <details class="p-4 bg-white border rounded-lg reveal" data-reveal>
-            <summary class="font-semibold cursor-pointer">Quanto tempo demora uma formatação?</summary>
-            <p class="mt-2 text-slate-700">Normalmente entre 1 e 3 horas, dependendo do backup e da complexidade.</p>
-          </details>
-          <details class="p-4 bg-white border rounded-lg reveal" data-reveal>
-            <summary class="font-semibold cursor-pointer">Vocês fazem backup?</summary>
-            <p class="mt-2 text-slate-700">Sim — oferecemos opções com e sem backup. Consulte preços na seção de serviços.</p>
-          </details>
-          <details class="p-4 bg-white border rounded-lg reveal" data-reveal>
-            <summary class="font-semibold cursor-pointer">Qual a forma de pagamento?</summary>
-            <p class="mt-2 text-slate-700">Aceitamos Pix, transferência e dinheiro. Consulte nossa política na loja.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="py-14">
-      <div class="container">
-        <div class="max-w-3xl mx-auto text-center reveal" data-reveal>
-          <h2 class="text-3xl font-bold text-primary mb-4">Sobre a TechLine</h2>
-          <p class="text-slate-700">Oferecemos serviços rápidos e confiáveis em manutenção, suporte e consultoria. Nossa equipe é formada por técnicos certificados, com atendimento presencial e remoto. Atendimento transparente, orçamento claro e garantia em serviços selecionados.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="py-14 bg-primary text-white">
-      <div class="container max-w-3xl mx-auto">
-        <h2 class="text-3xl font-bold mb-6 text-center">Solicitar Orçamento</h2>
-
-        <form id="quoteForm" onsubmit="return submitForm(event)" class="grid gap-3" aria-label="Formulário de solicitação de orçamento">
-          <label class="sr-only" for="name">Nome completo</label>
-          <input id="name" name="name" required class="p-3 rounded text-black" placeholder="Nome completo" />
-
-          <label class="sr-only" for="phone">Telefone</label>
-          <input id="phone" name="phone" required class="p-3 rounded text-black" placeholder="Telefone (Ex: 37 9xxxx-xxxx)" />
-
-          <label class="sr-only" for="email">E-mail</label>
-          <input id="email" name="email" class="p-3 rounded text-black" placeholder="E-mail (opcional)" />
-
-          <label class="sr-only" for="serviceSelect">Serviço</label>
-          <select id="serviceSelect" name="serviceSelect" class="p-3 rounded text-black">
-            <option value="">Escolha o serviço</option>
-            <option>Formatação</option>
-            <option>Consultoria</option>
-            <option>Acesso Remoto</option>
-            <option>Montagem</option>
-            <option>Visita Técnica</option>
-            <option>Limpeza Física</option>
-          </select>
-
-          <label class="sr-only" for="details">Detalhes</label>
-          <textarea id="details" name="details" required class="p-3 rounded h-28 text-black" placeholder="Descreva o problema"></textarea>
-
-          <div class="flex gap-3">
-            <button type="submit" class="px-4 py-2 bg-white text-primary rounded">Enviar via WhatsApp</button>
-            <button type="button" onclick="resetForm()" class="px-4 py-2 border rounded">Limpar</button>
-          </div>
-        </form>
-
-        <div class="mt-8 grid md:grid-cols-2 gap-6">
-          <div class="bg-white p-4 rounded-lg text-black">
-            <h4 class="font-semibold">Endereço</h4>
-            <p class="text-sm mt-1">Rua Maria Do Carmo Da Fonseca, 40, Residencial Dos Lagos - 35573-374 — Formiga, MG</p>
-            <p class="text-sm mt-1">Horário: Seg–Sex 9h–18h</p>
-          </div>
-          <div class="bg-white p-4 rounded-lg text-black">
-            <h4 class="font-semibold">Telefone / WhatsApp</h4>
-            <p class="text-sm mt-1"><a href="https://wa.me/5537998400037" rel="noopener" target="_blank"> (37) 99840-0037</a></p>
-            <h4 class="font-semibold mt-4">Instagram</h4>
-            <p class="text-sm mt-1"><a href="https://instagram.com/techline._" rel="noopener" target="_blank">@techline._</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CHAT WIDGET -->
-    <div id="chatWidget" class="fixed bottom-6 right-6 z-50" aria-live="polite">
-      <button id="openChat" aria-label="Abrir chat" class="flex items-center gap-3 px-4 py-3 bg-primary text-white rounded-full shadow-lg floating">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-3.8-11.3 8.38 8.38 0 0 1 3.8.9L21 3v8.5z"/></svg>
-        <span class="hidden sm:inline">Atendimento</span>
-      </button>
-
-      <div id="chatPanel" class="hidden mt-3 w-80 bg-white rounded-2xl p-4 border shadow-lg" role="dialog" aria-modal="false" aria-label="Chat de atendimento">
-        <div class="flex items-start gap-3">
-          <img src="design02.png" alt="TechLine" class="h-10 w-10 rounded"/>
-          <div>
-            <div class="font-semibold">Atendimento TechLine</div>
-            <div class="text-xs text-slate-500">Respostas rápidas via WhatsApp</div>
-          </div>
-        </div>
-
-        <div class="mt-3">
-          <label class="sr-only" for="chatName">Seu nome</label>
-          <input id="chatName" class="w-full p-2 border rounded mb-2" placeholder="Seu nome" />
-          <label class="sr-only" for="chatPhone">Telefone</label>
-          <input id="chatPhone" class="w-full p-2 border rounded mb-2" placeholder="Telefone" />
-          <label class="sr-only" for="chatMsg">Mensagem</label>
-          <textarea id="chatMsg" class="w-full p-2 border rounded mb-2" placeholder="Digite sua mensagem"></textarea>
-          <div class="flex gap-2">
-            <button onclick="sendChat()" class="px-3 py-2 bg-primary text-white rounded">Enviar</button>
-            <button onclick="closeChat()" class="px-3 py-2 border rounded">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="py-8 bg-slate-900 text-white mt-12" role="contentinfo">
-      <div class="container text-center">
-        <div class="flex items-center justify-center gap-4 mb-2">
-          <img src="design01.png" class="h-8 object-contain" alt="TechLine — logotipo com nome" />
-          <div class="text-sm">TechLine — Suporte, manutenção e montagem</div>
-        </div>
-        <div class="text-sm">Telefone/WhatsApp: <a href="https://wa.me/5537998400037" class="gold-txt" rel="noopener" target="_blank">(37) 99840-0037</a> — Instagram: <a href="https://instagram.com/techline._" class="gold-txt" rel="noopener" target="_blank">@techline._</a></div>
-        <div class="text-xs text-slate-400 mt-3">© <span id="year"></span> TechLine. Todos os direitos reservados.</div>
-      </div>
-    </footer>
-
-  </main>
-
-  <!-- MODAL DETAILS (reused by "Mais info") -->
-  <div id="modal" class="fixed inset-0 bg-black bg-opacity-40 hidden items-center justify-center z-60" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="bg-white p-6 rounded-xl max-w-xl mx-4 shadow-xl">
-      <div id="modalContent" class="text-slate-800" tabindex="0"></div>
-      <div class="mt-4 text-right">
-        <button onclick="closeModal()" class="px-4 py-2 bg-primary text-white rounded">Fechar</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Structured Data (LocalBusiness) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "TechLine",
-    "image": "https://yourdomain.com/design01.png",
-    "@id": "",
-    "url": "https://yourdomain.com",
-    "telephone": "+5537998400037",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Rua Maria Do Carmo Da Fonseca, 40",
-      "addressLocality": "Formiga",
-      "addressRegion": "MG",
-      "postalCode": "35573-374",
-      "addressCountry": "BR"
-    },
-    "openingHoursSpecification": [{
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    }]
-  }
-  </script>
-
-  <script>
-    // Year in footer
-    document.getElementById('year').innerText = new Date().getFullYear();
-
-    // Reveal on scroll
-    document.addEventListener('DOMContentLoaded', () => {
-      const els = document.querySelectorAll('[data-reveal]');
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting) entry.target.classList.add('in');
-        });
-      }, {threshold: .12});
-      els.forEach(el => { el.classList.add('reveal'); io.observe(el); });
-
-      // Mobile menu toggle
-      const menuBtn = document.getElementById('mobileMenuBtn');
-      const mobileNav = document.getElementById('mobileNav');
-      if(menuBtn && mobileNav){
-        menuBtn.addEventListener('click', ()=>{
-          const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-          menuBtn.setAttribute('aria-expanded', String(!expanded));
-          if(!expanded){ mobileNav.style.maxHeight = mobileNav.scrollHeight + 'px'; } else { mobileNav.style.maxHeight = '0'; }
-        })
-      }
-
-      // Trap focus into modal when opened
-      const modal = document.getElementById('modal');
-      modal.addEventListener('keydown', (e)=>{
-        if(e.key === 'Escape') closeModal();
-      });
-
-    });
-
-    // Prefill service helper
-    function prefillService(name) {
-      const sel = document.getElementById('serviceSelect');
-      if(sel) sel.value = name;
-      const details = document.getElementById('details');
-      if(details) details.focus();
-      const contact = document.getElementById('contact');
-      if(contact) window.scrollTo({top: contact.offsetTop - 60, behavior:'smooth'});
-    }
-
-    // Form to WhatsApp (improved encoding and validation)
-    function submitForm(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const service = document.getElementById('serviceSelect').value || 'Serviço não especificado';
-      const details = document.getElementById('details').value.trim();
-      if(!name || !phone || !details){ alert('Preencha nome, telefone e detalhes'); return false; }
-      // simple phone normalization (keeps digits)
-      const digits = phone.replace(/\D/g,'');
-      const message = `Orçamento - ${encodeURIComponent(name)} (${encodeURIComponent(phone)})%0A%0AServiço:%20${encodeURIComponent(service)}%0A%0ADetalhes:%20${encodeURIComponent(details)}${email ? '%0A%0AEmail:%20' + encodeURIComponent(email) : ''}`;
-      window.open(`https://wa.me/5537998400037?text=${message}`, '_blank', 'noopener');
-      return false;
-    }
-
-    function resetForm(){ const f=document.getElementById('quoteForm'); if(f) f.reset(); }
-
-    // Chat widget
-    const openChatBtn = document.getElementById('openChat');
-    const chatPanel = document.getElementById('chatPanel');
-    if(openChatBtn) openChatBtn.addEventListener('click', ()=> chatPanel.classList.toggle('hidden'));
-    function closeChat(){ if(chatPanel) chatPanel.classList.add('hidden'); }
-    function sendChat(){
-      const nm = document.getElementById('chatName').value.trim();
-      const ph = document.getElementById('chatPhone').value.trim();
-      const msg = document.getElementById('chatMsg').value.trim();
-      if(!ph || !msg){ alert('Informe telefone e mensagem'); return; }
-      const text = `Atendimento - ${encodeURIComponent(nm)} (${encodeURIComponent(ph)})%0A%0A${encodeURIComponent(msg)}`;
-      window.open(`https://wa.me/5537998400037?text=${text}`, '_blank', 'noopener');
-    }
-
-    // Details modal
-    function toggleDetails(btn){
-      const text = btn.getAttribute('data-details') || 'Detalhes indisponíveis.';
-      document.getElementById('modalContent').innerText = text;
-      const modalEl = document.getElementById('modal');
-      modalEl.classList.remove('hidden');
-      modalEl.classList.add('flex');
-      modalEl.setAttribute('aria-hidden','false');
-      document.getElementById('modalContent').focus();
-    }
-    function closeModal(){
-      const modalEl = document.getElementById('modal');
-      modalEl.classList.add('hidden');
-      modalEl.classList.remove('flex');
-      modalEl.setAttribute('aria-hidden','true');
-    }
-
-    // Smooth scroll for quote button
-    const quoteBtn = document.getElementById('quoteBtn');
-    if(quoteBtn) quoteBtn.addEventListener('click', ()=> { const contact = document.getElementById('contact'); if(contact) window.scrollTo({top: contact.offsetTop - 60, behavior:'smooth'}); });
-  </script>
 </body>
 </html>
