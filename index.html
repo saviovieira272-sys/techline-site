@@ -31,6 +31,7 @@ img{display:block;max-width:100%}
 .hero{background:radial-gradient(700px 420px at 80% 20%,rgba(11,87,208,.55),transparent 65%),linear-gradient(160deg,#04122E,#062B6B)}
 .grid-bg{background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:linear-gradient(#000,transparent 85%);mask-image:linear-gradient(#000,transparent 85%)}
 .glass{background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22)}
+.glass-dark{background:rgba(4,18,46,.62);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border:1px solid rgba(255,255,255,.28);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35)}
 .price{font-family:Sora,sans-serif;font-weight:700}
 .lift{transition:transform .25s,box-shadow .25s}.lift:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(2,6,23,.12)}
 .mobile-nav{transition:max-height .28s;overflow:hidden}
@@ -87,7 +88,7 @@ details[open]>summary::after{content:"–"}
     <div class="relative max-w-md mx-auto w-full">
       <div class="absolute -inset-3 rounded-[2rem] bg-gold/30 blur-2xl"></div>
       <img src="design.png" alt="Técnico da TechLine" class="relative rounded-[1.75rem] w-full h-[430px] object-cover object-top border-4 border-white/20 shadow-2xl" width="720" height="860" fetchpriority="high">
-      <div class="glass absolute -left-4 bottom-10 rounded-2xl px-4 py-3 text-sm shadow-xl"><strong class="block fd">Diagnóstico rápido</strong>e orçamento antes de começar</div>
+      <div class="glass-dark absolute -left-4 bottom-10 rounded-2xl px-5 py-3.5 text-[15px] shadow-xl"><strong class="block fd text-base">Diagnóstico rápido</strong><span class="text-white/90">e orçamento antes de começar</span></div>
       <div class="absolute -right-3 top-8 bg-gold text-black rounded-2xl px-4 py-3 text-sm font-semibold shadow-xl fd">Garantia<br>30 dias*</div>
     </div>
   </div>
