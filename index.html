@@ -6,190 +6,139 @@
 <title>TechLine — Informática em Formiga, MG • Manutenção e Suporte</title>
 <meta name="description" content="TechLine Formiga (MG) — manutenção, formatação, montagem, suporte remoto e consultoria. Atendimento rápido, garantia e preço justo.">
 <meta name="keywords" content="TechLine, informática, manutenção, formatação, montagem, consultoria, suporte remoto, Formiga, MG">
-<meta name="author" content="TechLine">
-<meta name="theme-color" content="#0B57D0">
+<meta name="theme-color" content="#062B6B">
 <meta property="og:title" content="TechLine — Serviços de Informática em Formiga, MG">
-<meta property="og:description" content="Serviços rápidos e confiáveis em manutenção, suporte e consultoria. Deixe seu equipamento nas mãos de quem entende.">
+<meta property="og:description" content="Serviços rápidos e confiáveis em manutenção, suporte e consultoria.">
 <meta property="og:image" content="design01.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="TechLine — Serviços de Informática">
-<meta name="twitter:description" content="Serviços rápidos e confiáveis em manutenção, suporte e consultoria.">
 <meta name="twitter:image" content="design01.png">
-
-<!-- Favicon: vários tamanhos para aparecer maior e mais nítido -->
-<link rel="icon" type="image/png" sizes="32x32" href="design02.png">
-<link rel="icon" type="image/png" sizes="192x192" href="design02.png">
-<link rel="shortcut icon" href="design02.png">
-<link rel="apple-touch-icon" sizes="180x180" href="design02.png">
-
+<!-- Favicon: o script abaixo recorta as margens da imagem e troca por uma versão que preenche o ícone -->
+<link id="fav" rel="icon" type="image/png" href="design02.png">
+<link id="fav2" rel="apple-touch-icon" href="design02.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config={theme:{extend:{colors:{primary:'#0B57D0',deep:'#062B6B',gold:'#D4AF37'},fontFamily:{display:['Sora','sans-serif'],sans:['Inter','ui-sans-serif','system-ui','sans-serif']}}}}
-</script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0B57D0',deep:'#062B6B',ink:'#04122E',gold:'#D4AF37'},fontFamily:{display:['Sora','sans-serif'],sans:['Inter','system-ui','sans-serif']}}}}</script>
 <style>
-html{scroll-behavior:smooth;scroll-padding-top:84px}
-body{font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:#0f172a;-webkit-font-smoothing:antialiased}
-h1,h2,h3,.font-display{font-family:Sora,sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{font-family:Inter,system-ui,sans-serif;color:#0f172a;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.fd{font-family:Sora,sans-serif}
 img{display:block;max-width:100%}
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
 :focus-visible{outline:3px solid #D4AF37;outline-offset:2px}
-.hero-bg{background:radial-gradient(900px 400px at 85% -10%,rgba(11,87,208,.14),transparent 60%),linear-gradient(#fff,#f1f5fb)}
-.price{font-family:Sora,sans-serif;font-weight:700;color:#0B57D0}
-.lift{transition:transform .25s,box-shadow .25s}
-.lift:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(2,6,23,.09)}
-.hdr{transition:box-shadow .2s,background .2s}
-.hdr.scrolled{box-shadow:0 6px 24px rgba(2,6,23,.08)}
-.mobile-nav{transition:max-height .28s ease;overflow:hidden}
-.rv{opacity:0;transform:translateY(10px);transition:opacity .5s,transform .5s}
-.rv.in{opacity:1;transform:none}
+.hero{background:radial-gradient(700px 420px at 80% 20%,rgba(11,87,208,.55),transparent 65%),linear-gradient(160deg,#04122E,#062B6B)}
+.grid-bg{background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:linear-gradient(#000,transparent 85%);mask-image:linear-gradient(#000,transparent 85%)}
+.glass{background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.22)}
+.price{font-family:Sora,sans-serif;font-weight:700}
+.lift{transition:transform .25s,box-shadow .25s}.lift:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(2,6,23,.12)}
+.mobile-nav{transition:max-height .28s;overflow:hidden}
+.rv{opacity:0;transform:translateY(10px);transition:opacity .5s,transform .5s}.rv.in{opacity:1;transform:none}
 details>summary{list-style:none;cursor:pointer}
 details>summary::after{content:"+";float:right;font-weight:700;color:#0B57D0;font-size:1.25rem;line-height:1}
 details[open]>summary::after{content:"–"}
-.pulse{animation:pulse 2.4s ease-in-out infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}50%{box-shadow:0 0 0 14px rgba(37,211,102,0)}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
+.pulse{animation:pulse 2.4s infinite}@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}50%{box-shadow:0 0 0 14px rgba(37,211,102,0)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body class="bg-white">
 <a href="#main" class="sr-only focus:not-sr-only fixed top-2 left-2 z-[70] bg-primary text-white px-3 py-2 rounded">Pular para o conteúdo</a>
 
-<!-- HEADER -->
-<header id="hdr" class="hdr fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
-  <div class="wrap flex items-center justify-between h-[76px]">
-    <a href="#home" class="flex items-center gap-3" aria-label="TechLine — início">
-      <img src="design02.png" alt="Logotipo TechLine" class="h-14 w-14 md:h-16 md:w-16 object-contain" width="64" height="64">
-      <span class="leading-tight">
-        <span class="block font-display font-bold text-xl text-primary">TechLine</span>
-        <span class="block text-xs text-slate-600">Confiança em cada reparo</span>
-      </span>
-    </a>
-    <nav class="hidden md:flex items-center gap-7 text-sm font-medium" aria-label="Navegação principal">
-      <a href="#services" class="hover:text-primary">Serviços</a>
-      <a href="#prices" class="hover:text-primary">Preços</a>
-      <a href="#how" class="hover:text-primary">Como funciona</a>
-      <a href="#faq" class="hover:text-primary">Dúvidas</a>
-      <a href="#about" class="hover:text-primary">Sobre</a>
-      <a href="#contact" class="px-5 py-2.5 bg-primary text-white rounded-lg hover:bg-deep">Orçamento</a>
-    </nav>
-    <button id="menuBtn" class="md:hidden p-2 rounded" aria-controls="mobileNav" aria-expanded="false" aria-label="Abrir menu">
-      <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-    </button>
-  </div>
-  <div id="mobileNav" class="mobile-nav md:hidden bg-white border-t" style="max-height:0">
-    <div class="wrap py-3 flex flex-col text-base font-medium">
-      <a href="#services" class="py-3">Serviços</a>
-      <a href="#prices" class="py-3">Preços</a>
-      <a href="#how" class="py-3">Como funciona</a>
-      <a href="#faq" class="py-3">Dúvidas</a>
-      <a href="#about" class="py-3">Sobre</a>
-      <a href="#contact" class="my-2 text-center px-4 py-3 bg-primary text-white rounded-lg">Pedir orçamento</a>
+<!-- HEADER: barra flutuante -->
+<header class="fixed top-3 inset-x-0 z-50 px-3">
+  <div class="wrap !px-0">
+    <div class="bg-white/95 backdrop-blur rounded-2xl shadow-lg border border-slate-200 px-4 h-20 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3" aria-label="TechLine — início">
+        <img data-trim="sq" src="design02.png" alt="Logotipo TechLine" class="h-14 w-14 md:h-16 md:w-16 object-contain" width="64" height="64">
+        <span class="leading-tight"><span class="block fd font-extrabold text-2xl text-primary">TechLine</span><span class="block text-xs md:text-sm text-slate-600">Confiança em cada reparo</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium" aria-label="Navegação principal">
+        <a href="#services" class="hover:text-primary">Serviços</a><a href="#prices" class="hover:text-primary">Preços</a><a href="#how" class="hover:text-primary">Como funciona</a><a href="#faq" class="hover:text-primary">Dúvidas</a>
+        <a href="https://wa.me/5537998400037?text=Olá,%20quero%20informações" target="_blank" rel="noopener" class="px-5 py-2.5 bg-[#1faa59] text-white rounded-xl font-semibold hover:bg-[#188a49]">WhatsApp</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden p-2" aria-controls="mobileNav" aria-expanded="false" aria-label="Abrir menu"><svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+    <div id="mobileNav" class="mobile-nav md:hidden bg-white rounded-2xl shadow-lg mt-2" style="max-height:0">
+      <div class="px-5 py-3 flex flex-col font-medium">
+        <a href="#services" class="py-3">Serviços</a><a href="#prices" class="py-3">Preços</a><a href="#how" class="py-3">Como funciona</a><a href="#faq" class="py-3">Dúvidas</a><a href="#contact" class="py-3">Contato</a>
+      </div>
     </div>
   </div>
 </header>
 
-<main id="main" class="pt-[76px]">
-
+<main id="main">
 <!-- HERO -->
-<section id="home" class="hero-bg py-14 md:py-20">
-  <div class="wrap grid md:grid-cols-2 gap-10 items-center">
+<section id="home" class="hero relative overflow-hidden text-white pt-36 pb-20">
+  <div class="grid-bg absolute inset-0"></div>
+  <div class="wrap relative grid lg:grid-cols-[1.1fr_.9fr] gap-12 items-center">
     <div>
-      <p class="inline-block text-sm font-semibold text-primary bg-primary/10 rounded-full px-3 py-1">Informática em Formiga, MG</p>
-      <h1 class="mt-4 text-4xl md:text-5xl font-extrabold text-deep leading-[1.1]">Seu computador resolvido com rapidez, confiança e transparência.</h1>
-      <p class="mt-5 text-lg text-slate-700 max-w-[52ch]">Manutenção, formatação, montagem e suporte — presencial ou remoto. Você sabe o preço antes de começar e ainda tem garantia.</p>
-      <div class="mt-7 flex flex-wrap gap-3">
-        <a href="https://wa.me/5537998400037?text=Olá,%20quero%20informações" target="_blank" rel="noopener" class="px-6 py-3 bg-[#1faa59] text-white font-semibold rounded-lg hover:bg-[#188a49]">Chamar no WhatsApp</a>
-        <a href="#services" class="px-6 py-3 bg-white border border-slate-300 font-semibold rounded-lg hover:border-primary">Ver serviços</a>
+      <p class="inline-flex items-center gap-2 text-sm font-medium glass rounded-full px-4 py-1.5"><span class="h-2 w-2 rounded-full bg-[#25D366]"></span>Atendimento em Formiga, MG e online</p>
+      <h1 class="mt-5 text-4xl md:text-6xl font-extrabold leading-[1.05]">Rapidez, confiança e transparência no seu computador.</h1>
+      <p class="mt-5 text-lg text-white/80 max-w-[50ch]">Manutenção, formatação, montagem e suporte presencial ou remoto. Você sabe o preço antes de começar e ainda tem garantia.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="https://wa.me/5537998400037?text=Olá,%20quero%20informações" target="_blank" rel="noopener" class="px-7 py-4 bg-[#1faa59] rounded-xl font-semibold hover:bg-[#188a49]">Chamar no WhatsApp</a>
+        <a href="#services" class="px-7 py-4 glass rounded-xl font-semibold hover:bg-white/20">Ver serviços</a>
       </div>
-      <ul class="mt-8 grid sm:grid-cols-3 gap-3 text-sm">
-        <li class="p-3 rounded-lg bg-white border"><strong class="block">Garantia</strong>30 dias em serviços selecionados</li>
-        <li class="p-3 rounded-lg bg-white border"><strong class="block">Resposta rápida</strong>direto pelo WhatsApp</li>
-        <li class="p-3 rounded-lg bg-white border"><strong class="block">Preço claro</strong>sem surpresa no final</li>
+      <ul class="mt-9 flex flex-wrap gap-x-7 gap-y-2 text-sm text-white/85">
+        <li>✓ Garantia de 30 dias*</li><li>✓ Resposta rápida</li><li>✓ Preços claros</li><li>✓ Presencial e remoto</li>
       </ul>
     </div>
-    <div class="rounded-2xl overflow-hidden border bg-white shadow-xl">
-      <img src="design.png" alt="Técnico da TechLine trabalhando em notebook" class="w-full h-72 md:h-80 object-cover" width="720" height="480" fetchpriority="high">
-      <div class="p-5">
-        <h2 class="font-display font-bold text-lg">Diagnóstico rápido e honesto</h2>
-        <p class="text-sm text-slate-600 mt-1">Dizemos o que o equipamento tem, o que precisa e quanto custa antes de mexer.</p>
-        <div class="mt-4 flex gap-2">
-          <a class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold" href="https://wa.me/5537998400037?text=Olá,%20quero%20agendar%20um%20atendimento" target="_blank" rel="noopener">Agendar atendimento</a>
-          <button onclick="prefill('Visita Técnica')" class="px-4 py-2 border rounded-lg text-sm font-semibold">Pedir orçamento</button>
-        </div>
-      </div>
+    <div class="relative max-w-md mx-auto w-full">
+      <div class="absolute -inset-3 rounded-[2rem] bg-gold/30 blur-2xl"></div>
+      <img src="design.png" alt="Técnico da TechLine" class="relative rounded-[1.75rem] w-full h-[430px] object-cover object-top border-4 border-white/20 shadow-2xl" width="720" height="860" fetchpriority="high">
+      <div class="glass absolute -left-4 bottom-10 rounded-2xl px-4 py-3 text-sm shadow-xl"><strong class="block fd">Diagnóstico rápido</strong>e orçamento antes de começar</div>
+      <div class="absolute -right-3 top-8 bg-gold text-black rounded-2xl px-4 py-3 text-sm font-semibold shadow-xl fd">Garantia<br>30 dias*</div>
     </div>
-  </div>
-  <div class="wrap mt-10">
-    <img src="design03.png" alt="Banner promocional TechLine — manutenção e suporte" class="w-full rounded-xl object-cover h-40 md:h-56 shadow-md" width="1200" height="400" loading="lazy">
   </div>
 </section>
 
+<!-- BANNER -->
+<section class="py-10"><div class="wrap"><img src="design03.png" alt="Banner TechLine — manutenção e suporte" class="w-full rounded-2xl object-cover h-40 md:h-60 shadow-md" width="1200" height="400" loading="lazy"></div></section>
+
 <!-- SERVICES -->
-<section id="services" class="py-16 bg-slate-50">
+<section id="services" class="py-14">
   <div class="wrap">
-    <div class="md:flex items-end justify-between mb-8">
-      <h2 class="text-3xl font-bold text-deep">Nossos serviços</h2>
-      <p class="text-slate-600 mt-2 md:mt-0">Escolha um serviço e peça o orçamento em um toque.</p>
-    </div>
-    <div id="svcGrid" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+    <h2 class="text-3xl md:text-4xl font-bold text-deep">Serviços para cada necessidade</h2>
+    <p class="text-slate-600 mt-2">Escolha um serviço e peça o orçamento em um toque.</p>
+    <div id="svcGrid" class="mt-8 grid gap-5 md:grid-cols-3"></div>
   </div>
 </section>
 
 <!-- PRICES -->
-<section id="prices" class="py-16">
+<section id="prices" class="py-16 bg-slate-50">
   <div class="wrap">
-    <h2 class="text-3xl font-bold text-deep text-center">Tabela de preços</h2>
-    <p class="text-center text-slate-600 mt-2">Valores iniciais. Casos específicos são confirmados antes de começar.</p>
-    <div class="mt-9 grid gap-6 md:grid-cols-3 items-stretch">
-      <div class="lift bg-white p-7 rounded-2xl border text-center flex flex-col">
-        <h3 class="text-xl font-bold">Pacote Básico</h3>
-        <p class="text-slate-600 text-sm mt-1">Ideal para manutenção simples</p>
-        <div class="text-4xl price my-5">R$ 100</div>
-        <ul class="text-left text-sm space-y-2 mb-6 flex-1"><li>✓ Formatação sem backup</li><li>✓ Instalação de drivers</li><li>✓ Checagem básica de hardware</li></ul>
-        <a href="https://wa.me/5537998400037?text=Olá,%20quero%20contratar%20o%20Pacote%20Básico" target="_blank" rel="noopener" class="bg-primary text-white px-6 py-3 rounded-lg font-semibold">Contratar</a>
-      </div>
-      <div class="lift bg-white p-7 rounded-2xl border-2 border-gold text-center flex flex-col relative shadow-lg">
-        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-xs font-bold px-3 py-1 rounded-full">Mais escolhido</span>
-        <h3 class="text-xl font-bold">Pacote Completo</h3>
-        <p class="text-slate-600 text-sm mt-1">Com backup e otimizações</p>
-        <div class="text-4xl price my-5">R$ 150</div>
-        <ul class="text-left text-sm space-y-2 mb-6 flex-1"><li>✓ Formatação com backup</li><li>✓ Remoção de vírus</li><li>✓ Otimização de desempenho</li></ul>
-        <a href="https://wa.me/5537998400037?text=Olá,%20quero%20contratar%20o%20Pacote%20Completo" target="_blank" rel="noopener" class="bg-primary text-white px-6 py-3 rounded-lg font-semibold">Contratar</a>
-      </div>
-      <div class="lift bg-white p-7 rounded-2xl border text-center flex flex-col">
-        <h3 class="text-xl font-bold">Visita Técnica</h3>
-        <p class="text-slate-600 text-sm mt-1">Atendimento no local</p>
-        <div class="text-4xl price my-5">R$ 50</div>
-        <ul class="text-left text-sm space-y-2 mb-6 flex-1"><li>✓ Diagnóstico presencial</li><li>✓ Orçamento no local</li><li>✓ Execução conforme necessidade</li></ul>
-        <a href="https://wa.me/5537998400037?text=Olá,%20quero%20contratar%20a%20Visita%20Técnica" target="_blank" rel="noopener" class="bg-primary text-white px-6 py-3 rounded-lg font-semibold">Contratar</a>
-      </div>
+    <h2 class="text-3xl md:text-4xl font-bold text-deep text-center">Tabela de preços</h2>
+    <p class="text-center text-slate-600 mt-2">Valores iniciais, confirmados antes de qualquer serviço.</p>
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <div class="lift bg-white p-7 rounded-3xl border flex flex-col"><h3 class="text-xl font-bold">Pacote Básico</h3><p class="text-slate-600 text-sm">Manutenção simples</p><div class="text-4xl price text-primary my-5">R$ 100</div><ul class="text-sm space-y-2 mb-6 flex-1"><li>✓ Formatação sem backup</li><li>✓ Instalação de drivers</li><li>✓ Checagem básica de hardware</li></ul><a href="https://wa.me/5537998400037?text=Olá,%20quero%20contratar%20o%20Pacote%20Básico" target="_blank" rel="noopener" class="text-center bg-primary text-white px-6 py-3 rounded-xl font-semibold">Contratar</a></div>
+      <div class="lift bg-deep text-white p-7 rounded-3xl flex flex-col relative md:-translate-y-3 shadow-xl"><span class="absolute -top-3 left-7 bg-gold text-black text-xs font-bold px-3 py-1 rounded-full">Mais escolhido</span><h3 class="text-xl font-bold">Pacote Completo</h3><p class="text-white/70 text-sm">Com backup e otimizações</p><div class="text-4xl price text-gold my-5">R$ 150</div><ul class="text-sm space-y-2 mb-6 flex-1"><li>✓ Formatação com backup</li><li>✓ Remoção de vírus</li><li>✓ Otimização de desempenho</li></ul><a href="https://wa.me/5537998400037?text=Olá,%20quero%20contratar%20o%20Pacote%20Completo" target="_blank" rel="noopener" class="text-center bg-gold text-black px-6 py-3 rounded-xl font-semibold">Contratar</a></div>
+      <div class="lift bg-white p-7 rounded-3xl border flex flex-col"><h3 class="text-xl font-bold">Visita Técnica</h3><p class="text-slate-600 text-sm">Atendimento no local</p><div class="text-4xl price text-primary my-5">R$ 50</div><ul class="text-sm space-y-2 mb-6 flex-1"><li>✓ Diagnóstico presencial</li><li>✓ Orçamento no local</li><li>✓ Execução conforme necessidade</li></ul><a href="https://wa.me/5537998400037?text=Olá,%20quero%20contratar%20a%20Visita%20Técnica" target="_blank" rel="noopener" class="text-center bg-primary text-white px-6 py-3 rounded-xl font-semibold">Contratar</a></div>
     </div>
+    <p class="text-xs text-slate-500 text-center mt-6">*Garantia de 30 dias em serviços selecionados.</p>
   </div>
 </section>
 
 <!-- HOW -->
-<section id="how" class="py-16 bg-deep text-white">
+<section id="how" class="py-16">
   <div class="wrap">
-    <h2 class="text-3xl font-bold text-center">Como funciona o atendimento</h2>
-    <ol class="mt-9 grid md:grid-cols-3 gap-6">
-      <li class="p-6 rounded-2xl bg-white/10"><span class="font-display font-bold text-gold text-lg">Passo 1</span><h3 class="font-bold text-xl mt-1">Você chama</h3><p class="text-white/80 text-sm mt-2">Conte o problema pelo WhatsApp ou pelo formulário. Respondemos rápido.</p></li>
-      <li class="p-6 rounded-2xl bg-white/10"><span class="font-display font-bold text-gold text-lg">Passo 2</span><h3 class="font-bold text-xl mt-1">Diagnóstico e preço</h3><p class="text-white/80 text-sm mt-2">Avaliamos o equipamento e passamos o valor antes de qualquer serviço.</p></li>
-      <li class="p-6 rounded-2xl bg-white/10"><span class="font-display font-bold text-gold text-lg">Passo 3</span><h3 class="font-bold text-xl mt-1">Resolvido com garantia</h3><p class="text-white/80 text-sm mt-2">Você aprova, nós executamos e entregamos funcionando.</p></li>
+    <h2 class="text-3xl md:text-4xl font-bold text-deep text-center">Como funciona</h2>
+    <ol class="mt-10 grid md:grid-cols-3 gap-6">
+      <li class="p-6 rounded-3xl bg-slate-50 border"><span class="fd font-bold text-primary">Passo 1</span><h3 class="font-bold text-xl mt-1">Você chama</h3><p class="text-slate-600 text-sm mt-2">Conte o problema pelo WhatsApp ou pelo formulário.</p></li>
+      <li class="p-6 rounded-3xl bg-slate-50 border"><span class="fd font-bold text-primary">Passo 2</span><h3 class="font-bold text-xl mt-1">Diagnóstico e preço</h3><p class="text-slate-600 text-sm mt-2">Avaliamos e passamos o valor antes de qualquer serviço.</p></li>
+      <li class="p-6 rounded-3xl bg-slate-50 border"><span class="fd font-bold text-primary">Passo 3</span><h3 class="font-bold text-xl mt-1">Resolvido com garantia</h3><p class="text-slate-600 text-sm mt-2">Você aprova, executamos e entregamos funcionando.</p></li>
     </ol>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="py-16 bg-slate-50">
+<section class="py-16 bg-deep text-white">
   <div class="wrap">
-    <h2 class="text-3xl font-bold text-deep text-center">O que os clientes dizem</h2>
-    <div class="mt-8 grid gap-6 md:grid-cols-3">
-      <figure class="lift bg-white p-6 rounded-2xl border"><div class="text-gold" aria-label="5 estrelas">★★★★★</div><blockquote class="mt-2 text-slate-700">"Rápido e eficiente — meu notebook voltou a funcionar como novo!"</blockquote><figcaption class="mt-4 font-semibold">João S.</figcaption></figure>
-      <figure class="lift bg-white p-6 rounded-2xl border"><div class="text-gold" aria-label="5 estrelas">★★★★★</div><blockquote class="mt-2 text-slate-700">"Preço justo e atendimento excelente. Recomendo a TechLine."</blockquote><figcaption class="mt-4 font-semibold">Maria L.</figcaption></figure>
-      <figure class="lift bg-white p-6 rounded-2xl border"><div class="text-gold" aria-label="5 estrelas">★★★★★</div><blockquote class="mt-2 text-slate-700">"Fizeram backup, reinstalaram e entregaram tudo funcionando. Nota 10."</blockquote><figcaption class="mt-4 font-semibold">Carlos P.</figcaption></figure>
+    <h2 class="text-3xl md:text-4xl font-bold text-center">O que os clientes dizem</h2>
+    <div class="mt-9 grid gap-6 md:grid-cols-3">
+      <figure class="glass p-6 rounded-3xl"><div class="text-gold">★★★★★</div><blockquote class="mt-2">"Rápido e eficiente — meu notebook voltou a funcionar como novo!"</blockquote><figcaption class="mt-4 font-semibold">João S.</figcaption></figure>
+      <figure class="glass p-6 rounded-3xl"><div class="text-gold">★★★★★</div><blockquote class="mt-2">"Preço justo e atendimento excelente. Recomendo a TechLine."</blockquote><figcaption class="mt-4 font-semibold">Maria L.</figcaption></figure>
+      <figure class="glass p-6 rounded-3xl"><div class="text-gold">★★★★★</div><blockquote class="mt-2">"Fizeram backup, reinstalaram e entregaram tudo funcionando. Nota 10."</blockquote><figcaption class="mt-4 font-semibold">Carlos P.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -197,155 +146,143 @@ details[open]>summary::after{content:"–"}
 <!-- FAQ -->
 <section id="faq" class="py-16">
   <div class="wrap max-w-3xl">
-    <h2 class="text-3xl font-bold text-deep text-center mb-8">Perguntas frequentes</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-deep text-center mb-8">Perguntas frequentes</h2>
     <div class="space-y-3">
-      <details class="p-5 bg-white border rounded-xl"><summary class="font-semibold pr-6">Quanto tempo demora uma formatação?</summary><p class="mt-3 text-slate-700">Normalmente de 1 a 3 horas, dependendo do backup e da complexidade.</p></details>
-      <details class="p-5 bg-white border rounded-xl"><summary class="font-semibold pr-6">Vocês fazem backup?</summary><p class="mt-3 text-slate-700">Sim. Há opção com e sem backup — veja os valores na seção de serviços.</p></details>
-      <details class="p-5 bg-white border rounded-xl"><summary class="font-semibold pr-6">Qual a forma de pagamento?</summary><p class="mt-3 text-slate-700">Aceitamos Pix, transferência e dinheiro.</p></details>
-      <details class="p-5 bg-white border rounded-xl"><summary class="font-semibold pr-6">O atendimento remoto é seguro?</summary><p class="mt-3 text-slate-700">Sim. Usamos ferramentas autorizadas por você, e o acesso termina quando o serviço acaba.</p></details>
+      <details class="p-5 bg-white border rounded-2xl"><summary class="font-semibold pr-6">Quanto tempo demora uma formatação?</summary><p class="mt-3 text-slate-700">Normalmente de 1 a 3 horas, dependendo do backup e da complexidade.</p></details>
+      <details class="p-5 bg-white border rounded-2xl"><summary class="font-semibold pr-6">Vocês fazem backup?</summary><p class="mt-3 text-slate-700">Sim. Há opção com e sem backup — veja os valores em Serviços.</p></details>
+      <details class="p-5 bg-white border rounded-2xl"><summary class="font-semibold pr-6">Qual a forma de pagamento?</summary><p class="mt-3 text-slate-700">Aceitamos Pix, transferência e dinheiro.</p></details>
+      <details class="p-5 bg-white border rounded-2xl"><summary class="font-semibold pr-6">O atendimento remoto é seguro?</summary><p class="mt-3 text-slate-700">Sim. Usamos ferramentas autorizadas por você, e o acesso termina quando o serviço acaba.</p></details>
     </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="py-14 bg-slate-50">
-  <div class="wrap max-w-3xl text-center">
-    <h2 class="text-3xl font-bold text-deep mb-4">Sobre a TechLine</h2>
-    <p class="text-slate-700 text-lg">Somos uma equipe de técnicos de Formiga, MG, com atendimento presencial e remoto. Trabalhamos com orçamento claro, conversa direta e garantia em serviços selecionados.</p>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="py-16 bg-primary text-white">
-  <div class="wrap max-w-3xl">
-    <h2 class="text-3xl font-bold text-center mb-7">Solicitar orçamento</h2>
-    <form id="quoteForm" class="grid gap-3" novalidate>
-      <div class="grid sm:grid-cols-2 gap-3">
-        <div><label class="sr-only" for="name">Nome completo</label><input id="name" required autocomplete="name" class="w-full p-3 rounded-lg text-black" placeholder="Nome completo"></div>
-        <div><label class="sr-only" for="phone">Telefone</label><input id="phone" required type="tel" autocomplete="tel" inputmode="tel" class="w-full p-3 rounded-lg text-black" placeholder="Telefone (ex: 37 9xxxx-xxxx)"></div>
+<section id="contact" class="py-16 bg-primary text-white" id="about">
+  <div class="wrap grid lg:grid-cols-2 gap-10">
+    <div>
+      <h2 class="text-3xl md:text-4xl font-bold">Solicite seu orçamento</h2>
+      <p class="mt-3 text-white/85 max-w-[46ch]">Somos uma equipe de técnicos de Formiga, MG, com atendimento presencial e remoto, orçamento claro e garantia em serviços selecionados.</p>
+      <div class="mt-7 space-y-4 text-sm">
+        <p><strong class="block">Endereço</strong>Rua Maria Do Carmo Da Fonseca, 40, Residencial Dos Lagos — 35573-374, Formiga, MG</p>
+        <p><strong class="block">Horário</strong>Seg–Sex, 9h às 18h</p>
+        <p><strong class="block">WhatsApp</strong><a class="underline" href="https://wa.me/5537998400037" target="_blank" rel="noopener">(37) 99840-0037</a></p>
+        <p><strong class="block">Instagram</strong><a class="underline" href="https://instagram.com/techline._" target="_blank" rel="noopener">@techline._</a></p>
       </div>
-      <label class="sr-only" for="email">E-mail</label><input id="email" type="email" autocomplete="email" class="p-3 rounded-lg text-black" placeholder="E-mail (opcional)">
-      <label class="sr-only" for="serviceSelect">Serviço</label>
-      <select id="serviceSelect" class="p-3 rounded-lg text-black"><option value="">Escolha o serviço</option></select>
-      <label class="sr-only" for="details">Detalhes</label>
-      <textarea id="details" required class="p-3 rounded-lg h-28 text-black" placeholder="Descreva o problema"></textarea>
-      <p id="formMsg" class="text-sm text-gold min-h-[1.25rem]" role="alert"></p>
-      <div class="flex gap-3">
-        <button type="submit" class="px-6 py-3 bg-white text-primary font-semibold rounded-lg">Enviar pelo WhatsApp</button>
-        <button type="button" id="resetBtn" class="px-6 py-3 border border-white/60 rounded-lg">Limpar</button>
-      </div>
-    </form>
-    <div class="mt-9 grid md:grid-cols-2 gap-5 text-black">
-      <div class="bg-white p-5 rounded-xl"><h3 class="font-bold">Endereço</h3><p class="text-sm mt-1">Rua Maria Do Carmo Da Fonseca, 40, Residencial Dos Lagos — 35573-374, Formiga, MG</p><p class="text-sm mt-1">Seg–Sex, 9h às 18h</p></div>
-      <div class="bg-white p-5 rounded-xl"><h3 class="font-bold">WhatsApp</h3><p class="text-sm mt-1"><a class="text-primary font-semibold underline" href="https://wa.me/5537998400037" target="_blank" rel="noopener">(37) 99840-0037</a></p><h3 class="font-bold mt-3">Instagram</h3><p class="text-sm mt-1"><a class="text-primary font-semibold underline" href="https://instagram.com/techline._" target="_blank" rel="noopener">@techline._</a></p></div>
     </div>
+    <form id="quoteForm" class="grid gap-3 bg-white/10 p-5 rounded-3xl border border-white/20" novalidate>
+      <label class="sr-only" for="name">Nome completo</label><input id="name" autocomplete="name" class="p-3.5 rounded-xl text-black" placeholder="Nome completo">
+      <label class="sr-only" for="phone">Telefone</label><input id="phone" type="tel" autocomplete="tel" inputmode="tel" class="p-3.5 rounded-xl text-black" placeholder="Telefone (ex: 37 9xxxx-xxxx)">
+      <label class="sr-only" for="email">E-mail</label><input id="email" type="email" autocomplete="email" class="p-3.5 rounded-xl text-black" placeholder="E-mail (opcional)">
+      <label class="sr-only" for="serviceSelect">Serviço</label><select id="serviceSelect" class="p-3.5 rounded-xl text-black"><option value="">Escolha o serviço</option></select>
+      <label class="sr-only" for="details">Detalhes</label><textarea id="details" class="p-3.5 rounded-xl h-28 text-black" placeholder="Descreva o problema"></textarea>
+      <p id="formMsg" class="text-sm text-gold min-h-[1.25rem]" role="alert"></p>
+      <div class="flex gap-3"><button type="submit" class="px-6 py-3.5 bg-white text-primary font-semibold rounded-xl">Enviar pelo WhatsApp</button><button type="button" id="resetBtn" class="px-6 py-3.5 border border-white/60 rounded-xl">Limpar</button></div>
+    </form>
   </div>
 </section>
 </main>
 
 <!-- FOOTER -->
-<footer class="py-10 bg-slate-900 text-white">
-  <div class="wrap text-center">
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
-      <span class="bg-white rounded-xl p-2 inline-block"><img src="design01.png" alt="TechLine — logotipo com nome" class="h-16 md:h-20 w-auto object-contain"></span>
-      <span class="text-sm text-slate-300">Suporte, manutenção e montagem</span>
+<footer class="py-12 bg-ink text-white">
+  <div class="wrap flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+    <div class="flex flex-col sm:flex-row items-center gap-5">
+      <span class="bg-white rounded-2xl p-3"><img data-trim="wide" src="design01.png" alt="TechLine — logotipo com nome" class="h-20 md:h-24 w-auto object-contain"></span>
+      <span class="text-slate-300">Suporte, manutenção e montagem</span>
     </div>
-    <p class="text-sm">WhatsApp: <a href="https://wa.me/5537998400037" class="text-gold" target="_blank" rel="noopener">(37) 99840-0037</a> · Instagram: <a href="https://instagram.com/techline._" class="text-gold" target="_blank" rel="noopener">@techline._</a></p>
-    <p class="text-xs text-slate-400 mt-3">© <span id="year"></span> TechLine. Todos os direitos reservados.</p>
+    <div class="text-sm space-y-1">
+      <p>WhatsApp: <a href="https://wa.me/5537998400037" class="text-gold" target="_blank" rel="noopener">(37) 99840-0037</a></p>
+      <p>Instagram: <a href="https://instagram.com/techline._" class="text-gold" target="_blank" rel="noopener">@techline._</a></p>
+      <p class="text-xs text-slate-400 pt-2">© <span id="year"></span> TechLine. Todos os direitos reservados.</p>
+    </div>
   </div>
 </footer>
 
-<!-- WHATSAPP FLUTUANTE -->
-<a href="https://wa.me/5537998400037?text=Olá,%20quero%20informações" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" class="pulse fixed bottom-5 right-5 z-50 h-14 w-14 rounded-full bg-[#25D366] grid place-items-center shadow-lg">
-  <svg class="h-8 w-8" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.200 2.200 1.300.3.1.5.1.6-.1l.9-1.100c.2-.3.4-.2.600-.1l1.900.9c.3.1.5.2.5.3.1.2.1.8-.1 1.400z"/></svg>
+<a href="https://wa.me/5537998400037?text=Olá,%20quero%20informações" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" class="pulse fixed bottom-5 right-5 z-50 h-16 w-16 rounded-full bg-[#25D366] grid place-items-center shadow-lg">
+  <svg class="h-9 w-9" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2zm5.400 14.200c-.2.600-1.300 1.200-1.800 1.200-.5.100-1 .2-3.300-.7-2.800-1.200-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.100.1.300 0 .5l-.3.500-.4.400c-.1.200-.3.300-.1.600.2.300.7 1.200 1.500 1.900 1 .9 1.900 1.200 2.200 1.300.3.100.5.100.6-.1l.9-1.100c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.200.1.800-.1 1.400z"/></svg>
 </a>
 
-<!-- MODAL -->
 <div id="modal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-[60] p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="bg-white p-6 rounded-2xl max-w-md w-full shadow-xl">
-    <h3 id="modalTitle" class="font-display font-bold text-xl"></h3>
-    <p id="modalText" class="mt-2 text-slate-700"></p>
-    <div class="mt-5 flex justify-end gap-2">
-      <button id="modalPick" class="px-4 py-2 border rounded-lg">Selecionar</button>
-      <button id="modalClose" class="px-4 py-2 bg-primary text-white rounded-lg">Fechar</button>
-    </div>
+  <div class="bg-white p-6 rounded-3xl max-w-md w-full shadow-xl">
+    <h3 id="modalTitle" class="fd font-bold text-xl"></h3><p id="modalText" class="mt-2 text-slate-700"></p>
+    <div class="mt-5 flex justify-end gap-2"><button id="modalPick" class="px-4 py-2 border rounded-xl">Selecionar</button><button id="modalClose" class="px-4 py-2 bg-primary text-white rounded-xl">Fechar</button></div>
   </div>
 </div>
 
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"TechLine","image":"https://techline-site-lrxe.vercel.app/design01.png","url":"https://techline-site-lrxe.vercel.app","telephone":"+5537998400037","address":{"@type":"PostalAddress","streetAddress":"Rua Maria Do Carmo Da Fonseca, 40","addressLocality":"Formiga","addressRegion":"MG","postalCode":"35573-374","addressCountry":"BR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"}]}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"TechLine","image":"https://techline-site-lrxe.vercel.app/design01.png","url":"https://techline-site-lrxe.vercel.app","telephone":"+5537998400037","address":{"@type":"PostalAddress","streetAddress":"Rua Maria Do Carmo Da Fonseca, 40","addressLocality":"Formiga","addressRegion":"MG","postalCode":"35573-374","addressCountry":"BR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"}]}</script>
 
 <script>
 const WA='5537998400037';
-// Edite aqui: nome, ícone, descrição, preços e detalhes de cada serviço
+const $=id=>document.getElementById(id);
+
+/* Recorta as margens vazias (transparentes/brancas) de uma imagem.
+   Resolve logo e favicon "pequenos" causados por espaço em volta do desenho. */
+function trimImage(src,square,size){
+  return new Promise(res=>{
+    const im=new Image();
+    im.onload=()=>{try{
+      const w=im.naturalWidth,h=im.naturalHeight,c=document.createElement('canvas');c.width=w;c.height=h;
+      const x=c.getContext('2d');x.drawImage(im,0,0);
+      const d=x.getImageData(0,0,w,h).data;let t=h,l=w,r=-1,b=-1;
+      for(let y=0;y<h;y++)for(let i=0;i<w;i++){const k=(y*w+i)*4;
+        if(d[k+3]>25&&!(d[k]>240&&d[k+1]>240&&d[k+2]>240)){if(i<l)l=i;if(i>r)r=i;if(y<t)t=y;if(y>b)b=y}}
+      if(r<0)return res(src);
+      const cw=r-l+1,ch=b-t+1,o=document.createElement('canvas'),m=size||512;
+      if(square){const s=Math.max(cw,ch),pad=s*.06,full=s+pad*2;o.width=o.height=m;
+        const sc=m/full,g=o.getContext('2d');g.drawImage(c,l,t,cw,ch,(m-cw*sc)/2,(m-ch*sc)/2,cw*sc,ch*sc)}
+      else{const sc=Math.min(1,m/Math.max(cw,ch));o.width=cw*sc;o.height=ch*sc;o.getContext('2d').drawImage(c,l,t,cw,ch,0,0,o.width,o.height)}
+      res(o.toDataURL('image/png'))}catch(e){res(src)}};
+    im.onerror=()=>res(src);im.src=src;
+  });
+}
+document.querySelectorAll('img[data-trim]').forEach(async img=>{img.src=await trimImage(img.getAttribute('src'),img.dataset.trim==='sq',512)});
+trimImage('design02.png',true,256).then(u=>{$('fav').href=u;$('fav2').href=u});
+
+// Edite aqui: serviços, preços e detalhes
 const SERVICES=[
  {n:'Formatação',i:'🖥️',d:'Formatação completa com instalação de sistema e drivers.',p:['R$ 100 sem backup','R$ 110 com backup'],m:'Instalação do Windows, drivers, atualizações, otimizações e verificação de hardware.'},
  {n:'Consultoria',i:'💬',d:'Orientação técnica e recomendações personalizadas.',p:['R$ 30'],m:'Análise do equipamento, recomendações de upgrade, custo-benefício e planejamento.'},
  {n:'Acesso Remoto',i:'🌐',d:'Suporte remoto para resolver sem deslocamento.',p:['R$ 45'],m:'Acesso seguro por ferramentas autorizadas. Diagnóstico, ajustes e limpeza de software.'},
- {n:'Montagem',i:'🛠️',d:'Montagem de computadores sob medida para o seu uso.',p:['Sob consulta'],m:'Escolha de peças, montagem, organização de cabos, instalação do sistema e testes.'},
- {n:'Visita Técnica',i:'🚗',d:'Atendimento no local, na sua casa ou empresa.',p:['R$ 50'],m:'Diagnóstico presencial, orçamento no local e execução conforme a necessidade.'},
+ {n:'Montagem',i:'🛠️',d:'Computadores montados sob medida para o seu uso.',p:['Sob consulta'],m:'Escolha de peças, montagem, organização de cabos, instalação do sistema e testes.'},
+ {n:'Visita Técnica',i:'🚗',d:'Atendimento no local, em casa ou na empresa.',p:['R$ 50'],m:'Diagnóstico presencial, orçamento no local e execução conforme a necessidade.'},
  {n:'Limpeza Física',i:'🧹',d:'Limpeza interna e troca de pasta térmica.',p:['Sob consulta'],m:'Limpeza de poeira, ventoinhas e componentes para reduzir temperatura e barulho.'}
 ];
-const $=id=>document.getElementById(id);
-const grid=$('svcGrid'), sel=$('serviceSelect');
+const grid=$('svcGrid'),sel=$('serviceSelect');
 SERVICES.forEach((s,k)=>{
+  const hi=k===0;
   sel.insertAdjacentHTML('beforeend',`<option>${s.n}</option>`);
-  grid.insertAdjacentHTML('beforeend',`
-  <article class="lift rv p-6 bg-white border rounded-2xl flex flex-col">
-    <div class="flex items-start justify-between gap-3">
-      <div><h3 class="font-bold text-lg">${s.n}</h3><p class="text-slate-600 text-sm mt-1">${s.d}</p></div>
-      <div class="text-3xl" aria-hidden="true">${s.i}</div>
-    </div>
-    <div class="mt-4 flex-1">${s.p.map(x=>`<div class="price">${x}</div>`).join('')}</div>
-    <div class="mt-5 flex flex-wrap gap-2">
-      <a class="px-3 py-2 bg-primary text-white rounded-lg text-sm font-semibold" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${encodeURIComponent('Olá, quero orçamento para '+s.n)}">Pedir orçamento</a>
-      <button class="px-3 py-2 border rounded-lg text-sm" data-pick="${s.n}">Selecionar</button>
-      <button class="px-3 py-2 border rounded-lg text-sm" data-info="${k}">Mais info</button>
-    </div>
-  </article>`);
+  grid.insertAdjacentHTML('beforeend',`<article class="lift rv p-7 rounded-3xl flex flex-col ${hi?'md:col-span-2 bg-primary text-white':'bg-white border'}">
+    <div class="flex items-start justify-between gap-3"><div><h3 class="font-bold text-xl">${s.n}</h3><p class="${hi?'text-white/80':'text-slate-600'} text-sm mt-1 max-w-[44ch]">${s.d}</p></div><div class="text-4xl" aria-hidden="true">${s.i}</div></div>
+    <div class="mt-5 flex-1">${s.p.map(x=>`<div class="price text-lg ${hi?'text-gold':'text-primary'}">${x}</div>`).join('')}</div>
+    <div class="mt-6 flex flex-wrap gap-2">
+      <a class="px-4 py-2.5 rounded-xl text-sm font-semibold ${hi?'bg-white text-primary':'bg-primary text-white'}" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${encodeURIComponent('Olá, quero orçamento para '+s.n)}">Pedir orçamento</a>
+      <button class="px-4 py-2.5 border rounded-xl text-sm ${hi?'border-white/50':''}" data-pick="${s.n}">Selecionar</button>
+      <button class="px-4 py-2.5 border rounded-xl text-sm ${hi?'border-white/50':''}" data-info="${k}">Mais info</button>
+    </div></article>`);
 });
+function prefill(n){sel.value=n;$('contact').scrollIntoView({behavior:'smooth'});setTimeout(()=>$('details').focus({preventScroll:true}),500)}
+grid.addEventListener('click',e=>{const p=e.target.closest('[data-pick]'),i=e.target.closest('[data-info]');if(p)prefill(p.dataset.pick);if(i)openModal(SERVICES[i.dataset.info])});
 
-function prefill(name){
-  sel.value=name; $('details').focus({preventScroll:true});
-  $('contact').scrollIntoView({behavior:'smooth'});
-}
-grid.addEventListener('click',e=>{
-  const p=e.target.closest('[data-pick]'), i=e.target.closest('[data-info]');
-  if(p) prefill(p.dataset.pick);
-  if(i) openModal(SERVICES[i.dataset.info]);
-});
-
-// Modal
-const modal=$('modal'); let current=null;
-function openModal(s){current=s;$('modalTitle').textContent=s.n;$('modalText').textContent=s.m;modal.classList.replace('hidden','flex');$('modalClose').focus()}
+const modal=$('modal');let cur=null;
+function openModal(s){cur=s;$('modalTitle').textContent=s.n;$('modalText').textContent=s.m;modal.classList.replace('hidden','flex');$('modalClose').focus()}
 function closeModal(){modal.classList.replace('flex','hidden')}
-$('modalClose').onclick=closeModal;
-$('modalPick').onclick=()=>{closeModal();if(current)prefill(current.n)};
+$('modalClose').onclick=closeModal;$('modalPick').onclick=()=>{closeModal();if(cur)prefill(cur.n)};
 modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
-// Formulário -> WhatsApp
 $('quoteForm').addEventListener('submit',e=>{
   e.preventDefault();
-  const name=$('name').value.trim(), phone=$('phone').value.trim(), email=$('email').value.trim(), det=$('details').value.trim();
-  const msg=$('formMsg');
-  if(!name||!phone||!det){msg.textContent='Preencha nome, telefone e a descrição do problema.';return}
-  msg.textContent='';
-  const txt=`Orçamento - ${name} (${phone})\n\nServiço: ${sel.value||'Não especificado'}\n\nDetalhes: ${det}`+(email?`\n\nE-mail: ${email}`:'');
-  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(txt)}`,'_blank','noopener');
+  const n=$('name').value.trim(),p=$('phone').value.trim(),em=$('email').value.trim(),d=$('details').value.trim();
+  if(!n||!p||!d){$('formMsg').textContent='Preencha nome, telefone e a descrição do problema.';return}
+  $('formMsg').textContent='';
+  const t=`Orçamento - ${n} (${p})\n\nServiço: ${sel.value||'Não especificado'}\n\nDetalhes: ${d}`+(em?`\n\nE-mail: ${em}`:'');
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(t)}`,'_blank','noopener');
 });
 $('resetBtn').onclick=()=>{$('quoteForm').reset();$('formMsg').textContent=''};
 
-// Menu mobile
-const mb=$('menuBtn'), mn=$('mobileNav');
-function setMenu(open){mb.setAttribute('aria-expanded',open);mn.style.maxHeight=open?mn.scrollHeight+'px':'0'}
+const mb=$('menuBtn'),mn=$('mobileNav');
+function setMenu(o){mb.setAttribute('aria-expanded',o);mn.style.maxHeight=o?mn.scrollHeight+'px':'0'}
 mb.onclick=()=>setMenu(mb.getAttribute('aria-expanded')!=='true');
 mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
-
-// Header com sombra ao rolar + aparição suave dos cards
-const hdr=$('hdr');
-addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>8),{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.1});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 $('year').textContent=new Date().getFullYear();
