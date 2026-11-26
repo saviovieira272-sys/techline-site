@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://techline-site-lrxe.vercel.app/sitemap.xml
+Sitemap: https://techline-site.vercel.app/sitemap.xml

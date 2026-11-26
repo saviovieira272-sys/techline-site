@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const ROOT = path.join(__dirname, '..');
-const SITE = 'https://techline-site-lrxe.vercel.app';
+const SITE = 'https://techline-site.vercel.app';
 const WA = '5537998400037';
 const HOJE = new Date().toISOString().slice(0, 10);
 const ADDR = 'Rua Furnas, 310, Jardim Alvorada, Formiga - MG, 35572-100';
