@@ -1462,7 +1462,7 @@ const SC='sob consulta';
 /* ---------------- Textos (EDITE AQUI) ---------------- */
 const INFO={
  dev_pc:{k:'aparelho',n:'Computador de mesa',d:'Um computador gamer de verdade: gabinete com vidro, placa-mãe, processador, memórias, placa de vídeo, armazenamento e fonte. Clique nos pontos para conhecer cada peça.',svcs:['Formatação · R$ 100','Limpeza e pasta térmica','Upgrade de SSD e memória','Montagem de PC','Diagnóstico'],wa:'computador'},
- dev_nb:{k:'aparelho',n:'Notebook',d:'Notebook de trabalho. Por dentro ficam o SSD, a memória, a bateria e o cooler: clique nos pontos para ver cada um.',svcs:['Formatação · R$ 100','Troca de HD por SSD','Upgrade de memória','Limpeza e pasta térmica'],wa:'notebook'},
+ dev_nb:{k:'aparelho',n:'Notebook',d:'Notebook de trabalho Dell Latitude. Use o botão "Ver por dentro" para abrir um notebook real e ver SSD, memória, bateria e cooler.',svcs:['Formatação · R$ 100','Troca de HD por SSD','Upgrade de memória','Limpeza e pasta térmica'],wa:'notebook'},
  dev_ph:{k:'aparelho',n:'Celular',d:'Smartphone moderno. Clique nos pontos para ver tela, câmeras, bateria e conector de carga.',svcs:['Troca de tela','Troca de bateria','Conector de carga','Lentidão e backup'],wa:'celular'},
  dev_cn:{k:'aparelho',n:'Videogame e controle',d:'Console de mesa e controle sem fio. Clique nos pontos para ver ventilação, leitor, armazenamento e controle.',svcs:['Limpeza e pasta térmica','Superaquecimento','Leitura de disco','Conserto de controle'],wa:'videogame'},
  gpu:{k:'peça · gráficos',n:'Placa de vídeo',d:'Processa as imagens de jogos, vídeos e programas de edição. As ventoinhas giram para manter a temperatura baixa.',good:['Mais FPS nos jogos','Edição de vídeo e 3D mais rápidas','Vários monitores'],bad:['Tela piscando ou com riscos','Jogos travando ou fechando','Ventoinhas barulhentas ou paradas'],svc:'Limpeza, diagnóstico ou upgrade',p:SC,f:'Computadores — Limpeza e pasta térmica'},
@@ -1514,10 +1514,10 @@ const ITEMS={
  pc:{g:'Aparelhos',ic:'🖥️',label:'Computador',sub:'gabinete gamer',file:'pc',S:3,info:'dev_pc',view:[.55,.25,1],
    keep:{min:[-2.75,.3,-4.55],max:[1.1,3.8,-2.6]},
    hots:[{i:'cooler',go:'cooler',p:[-1.55,2.75,-3.75]},{i:'ram',go:'ram',p:[-1.05,2.85,-3.85]},{i:'nvme',go:'nvme',p:[-1.9,2.3,-4.2]},{i:'gpu',go:'gpu',p:[-1.15,2.02,-3.18]},{i:'hdd',go:'hdd',p:[-.93,.84,-2.9]},{i:'psu',p:[-2.3,.78,-3.5]},{i:'fans',p:[-2.45,3.0,-3.7]},{i:'mb',p:[-2.0,1.5,-4.2]}]},
- nb:{g:'Aparelhos',ic:'💻',label:'Notebook',sub:'Dell Latitude',file:'notebook',S:2.6,info:'dev_nb',rot:[0,Math.PI/2,0],view:[.35,.6,1],
+ nb:{g:'Aparelhos',ic:'💻',label:'Notebook',sub:'Dell Latitude',file:'notebook',S:2.6,info:'dev_nb',rot:[0,Math.PI/2,0],darken:.32,env:.6,view:[.35,.6,1],
    inside:{file:'notebook_dentro',S:2.6,autoFlat:true,view:[0,1.3,1],note:'Escaneamento 3D feito a partir de fotos de um notebook real aberto (Framework Laptop).',
      hots:[{i:'nb_cool',go:'nbfan',p:[1.12,1.59,-1.44]},{i:'nb_ram',go:'ram',p:[2.49,1.34,-1.36]},{i:'nb_ssd',go:'nvme',p:[1.82,1,-1.3]},{i:'nb_batt',p:[1.67,.25,-1.03]},{i:'nb_board',p:[.47,1.42,-1.38]}]},
-   hots:[{i:'nb_screen',f:[.5,.62,.08]},{i:'nb_kb',f:[.5,.06,.5]},{i:'nvme',go:'nvme',f:[.32,.03,.42]},{i:'ram',go:'ram',f:[.66,.03,.42]},{i:'nb_batt',f:[.5,.03,.82]},{i:'cooler',go:'cooler',f:[.82,.03,.3]}]},
+   hots:[{i:'nb_screen',f:[.5,.62,.08]},{i:'nb_kb',f:[.5,.06,.5]}]},
  ph:{g:'Aparelhos',ic:'📱',label:'Celular',sub:'smartphone',file:'celular',S:1.7,info:'dev_ph',rot:[0,Math.PI,0],view:[.55,.12,1],
    hots:[{i:'ph_screen',f:[.5,.55,1]},{i:'ph_cam',f:[.72,.88,0]},{i:'ph_batt',f:[.5,.45,.5]},{i:'ph_port',mesh:/Frame_Port/}]},
  cn:{g:'Aparelhos',ic:'🎮',label:'Videogame',sub:'console + controle',file:'console',S:2.1,info:'dev_cn',view:[.9,.25,1],extra:{file:'controle',S:.75,pos:[1.25,0,.9],rot:[0,-.6,0]},
@@ -1668,6 +1668,7 @@ function createViewer(){
     if(!gltf.userData.planes){gltf.userData.planes=true;src.updateMatrixWorld(true);const all=new THREE.Box3().setFromObject(src),as=all.getSize(new THREE.Vector3()),am=Math.max(as.x,as.y,as.z);const rm=[];
       src.traverse(o=>{if(o.isMesh){const s=new THREE.Box3().setFromObject(o).getSize(new THREE.Vector3());const mx=Math.max(s.x,s.y,s.z),mn=Math.min(s.x,s.y,s.z);if(mx>am*.85&&mn<mx*.01)rm.push(o)}});
       if(rm.length){const rest=new THREE.Box3();src.traverse(o=>{if(o.isMesh&&!rm.includes(o))rest.expandByObject(o)});const rs=rest.getSize(new THREE.Vector3());if(!rest.isEmpty()&&Math.max(rs.x,rs.y,rs.z)<am*.75)rm.forEach(o=>o.parent.remove(o))}}
+    if((cfg.darken||cfg.env)&&!gltf.userData.tuned){gltf.userData.tuned=true;const seen=new Set();src.traverse(o=>{if(!o.isMesh)return;[].concat(o.material).forEach(m=>{if(seen.has(m))return;seen.add(m);if(cfg.env!==undefined)m.envMapIntensity=cfg.env;if(cfg.darken&&!m.map&&m.emissive.getHex()===0)m.color.multiplyScalar(cfg.darken);if(cfg.darken)m.roughness=Math.min(m.roughness,.55)})})}
     const inner=new THREE.Group();inner.add(src);
     src.position.set(0,0,0);src.scale.setScalar(1);src.rotation.set(0,0,0);
     if(cfg.rot)inner.rotation.set(...cfg.rot);
