@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://techline-site-lrxe.vercel.app/sitemap.xml
