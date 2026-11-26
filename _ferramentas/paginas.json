@@ -1,0 +1,42 @@
+[
+ {
+  "slug": "loja-de-informatica-formiga-mg",
+  "menu": "Loja de informática",
+  "desc": "Loja de informática e assistência técnica em Formiga, MG: conserto de computador, notebook, celular e videogame, formatação, SSD e suporte remoto. Orçamento antes do serviço."
+ },
+ {
+  "slug": "formatacao-de-computador-formiga-mg",
+  "menu": "Formatação",
+  "desc": "Formatação de computador e notebook em Formiga, MG a partir de R$ 100. Com backup por R$ 110 ou pacote completo com remoção de vírus por R$ 150. Orçamento pelo WhatsApp."
+ },
+ {
+  "slug": "conserto-de-notebook-formiga-mg",
+  "menu": "Conserto de notebook",
+  "desc": "Conserto de notebook em Formiga, MG: notebook lento, esquentando, não liga ou com tela e teclado com defeito. Diagnóstico e orçamento antes do reparo. Garantia."
+ },
+ {
+  "slug": "upgrade-ssd-formiga-mg",
+  "menu": "Upgrade SSD",
+  "desc": "Troca de HD por SSD e upgrade de memória em Formiga, MG. Computador e notebook até 44x mais rápidos. Avaliamos a compatibilidade e passamos o orçamento."
+ },
+ {
+  "slug": "conserto-de-celular-formiga-mg",
+  "menu": "Conserto de celular",
+  "desc": "Conserto de celular em Formiga, MG: troca de tela, troca de bateria, problemas de carregamento e lentidão. Orçamento conforme o modelo pelo WhatsApp."
+ },
+ {
+  "slug": "manutencao-de-videogame-formiga-mg",
+  "menu": "Videogame",
+  "desc": "Manutenção de videogame em Formiga, MG: limpeza, pasta térmica, superaquecimento, leitura de disco e conserto de controle. Orçamento antes do reparo."
+ },
+ {
+  "slug": "montagem-de-pc-gamer-formiga-mg",
+  "menu": "Montagem de PC",
+  "desc": "Montagem de PC gamer e computador sob medida em Formiga, MG. Indicamos as peças certas para o seu uso e orçamento e montamos tudo. Consultoria R$ 30."
+ },
+ {
+  "slug": "suporte-tecnico-remoto",
+  "menu": "Suporte remoto",
+  "desc": "Suporte técnico remoto para computador por R$ 45: Formiga, Arcos, Pains, Pimenta, Candeias e região. Resolvemos pela internet com acesso autorizado por você."
+ }
+]
