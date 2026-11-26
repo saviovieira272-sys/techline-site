@@ -3,6 +3,12 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "techline-site-lrxe.vercel.app" }],
+      "destination": "https://techline-site.vercel.app/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "techline-site-lrxe.vercel.app" }],
       "destination": "https://techline-site.vercel.app/:path*",
