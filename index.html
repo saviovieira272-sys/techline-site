@@ -814,7 +814,7 @@ footer{padding:80px 0 30px;background:#03060f;border-top:1px solid var(--line);o
       <div class="stage3d" id="stage3d">
         <div class="s-top">
           <div class="s-title"><small id="sKind">aparelho</small><b id="sName">Computador</b></div>
-          <div class="s-tools"><button class="st" id="sSpin" type="button" aria-pressed="true" title="Girar automaticamente" aria-label="Girar automaticamente">⟳</button><button class="st" id="sReset" type="button" title="Ver tudo" aria-label="Ver tudo">⌂</button><button class="st" id="sFull" type="button" title="Tela cheia" aria-label="Tela cheia">⛶</button></div>
+          <div class="s-tools"><button class="st" id="sIn" type="button" aria-pressed="false" title="Ver por dentro" aria-label="Ver por dentro" style="display:none">🔧</button><button class="st" id="sSpin" type="button" aria-pressed="true" title="Girar automaticamente" aria-label="Girar automaticamente">⟳</button><button class="st" id="sReset" type="button" title="Ver tudo" aria-label="Ver tudo">⌂</button><button class="st" id="sFull" type="button" title="Tela cheia" aria-label="Tela cheia">⛶</button></div>
         </div>
         <div class="hots" id="hots3"></div>
         <div class="s-load" id="sLoad"><div><span id="sLoadTxt">carregando modelo 3D…</span><div class="bar"><i id="sLoadBar"></i></div></div></div>
@@ -1084,6 +1084,8 @@ footer{padding:80px 0 30px;background:#03060f;border-top:1px solid var(--line);o
       <li><a href="https://sketchfab.com/3d-models/wd-green-1tb-hard-disk-hdd-e9244f56e0724dd097570e29bae4b7c6" target="_blank" rel="noopener">WD Green 1TB Hard Disk HDD</a> — MajdyModels</li>
       <li><a href="https://sketchfab.com/3d-models/ssd-noname-sata-5a182a80361f407e965adaaee077e3cd" target="_blank" rel="noopener">SSD NoName Sata</a> — Хлюпич</li>
       <li><a href="https://sketchfab.com/3d-models/nvme-ssd-2280-3d478ac74728408890c2a03363138375" target="_blank" rel="noopener">NVME SSD 2280</a> — TDD</li>
+      <li><a href="https://sketchfab.com/3d-models/framework-laptop-mainboard-and-internals-493991ea5fe64a67b084bc0b1710cb08" target="_blank" rel="noopener">FrameWork Laptop mainboard and internals</a> — Photo_Max</li>
+      <li><a href="https://sketchfab.com/3d-models/laptop-cooling-fan-0796a914f76944f8bb443dce83dc0c8a" target="_blank" rel="noopener">Laptop cooling fan</a> — Guy in a Poncho</li>
       <li><a href="https://sketchfab.com/3d-models/storage-ssd-hdd-m2-bdd5fd67a7674359ab8648204b5c0575" target="_blank" rel="noopener">Storage (SSD, HDD, M.2)</a> — Vivien Deroche</li>
     </ul><p style="margin-top:8px">Licença: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Modelos convertidos e otimizados para a web. Marcas pertencem aos seus respectivos donos.</p></details>
     <div class="copy"><span>© <span id="year"></span> TechLine Informática. Todos os direitos reservados.</span><span>Formiga · Minas Gerais</span></div>
@@ -1469,6 +1471,11 @@ const INFO={
  hdd:{k:'peça · armazenamento',n:'HD 3,5" (disco rígido)',d:'Disco mecânico com pratos girando por dentro. Muito espaço por preço baixo, mas é a peça mais lenta do computador.',spd:160,gt:'PONTOS FORTES',good:['Bom para guardar fotos, vídeos e backups','Menor custo por GB'],bt:'PONTOS FRACOS',bad:['Até ~160 MB/s: o mais lento','Sensível a quedas e faz barulho','Deixa o Windows lento como disco principal'],svc:'Troca do HD por SSD',p:SC,f:'Computadores — Upgrade de SSD e memória',cmp:'storage',ck:'hdd'},
  sata:{k:'peça · armazenamento',n:'SSD SATA 2,5"',d:'SSD no mesmo formato de um HD de notebook, ligado por cabo SATA. É o upgrade ideal para quem ainda usa HD.',spd:550,good:['Cerca de 3,4x mais rápido que um HD','Compatível com quase todo PC e notebook','Silencioso e resistente a impactos'],bt:'IDEAL PARA',bs:'good',bad:['Computadores e notebooks antigos','Velocidade gastando pouco'],svc:'Troca de HD por SSD',p:SC,f:'Computadores — Upgrade de SSD e memória',cmp:'storage',ck:'sata'},
  nvme:{k:'peça · armazenamento',n:'SSD NVMe M.2',d:'O armazenamento mais rápido: encaixa direto na placa-mãe, sem cabos, e chega a 7.000 MB/s.',spd:7000,good:['Até ~44x mais rápido que um HD','Windows liga em poucos segundos','Jogos e programas abrem quase na hora'],bt:'IDEAL PARA',bs:'good',bad:['Sistema e programas do dia a dia','Jogos e edição de vídeo','Quem quer o máximo de velocidade'],svc:'Instalação de SSD NVMe',p:SC,f:'Computadores — Upgrade de SSD e memória',cmp:'storage',ck:'nvme'},
+ nbfan:{k:'peça · refrigeração',n:'Ventoinha de notebook',d:'Ventoinha real de um notebook HP. Ela puxa o ar e sopra o calor do processador para fora pelas aletas de cobre.',good:['Limpeza deixa o notebook frio e silencioso','Evita travamentos e desligamentos'],bad:['Barulho alto ou chiado','Notebook muito quente embaixo','Ventoinha parada'],svc:'Limpeza e pasta térmica',p:SC,f:'Computadores — Limpeza e pasta térmica'},
+ nb_ssd:{k:'notebook · armazenamento',n:'SSDs NVMe',d:'Neste notebook real os SSDs NVMe ficam lado a lado, presos na placa. É aqui que fazemos o upgrade de armazenamento.',spd:7000,good:['Até ~44x mais rápido que um HD','Liga em poucos segundos'],bt:'IDEAL PARA',bs:'good',bad:['Quem quer o notebook mais rápido possível'],svc:'Instalação de SSD NVMe',p:SC,f:'Computadores — Upgrade de SSD e memória',cmp:'storage',ck:'nvme'},
+ nb_ram:{k:'notebook · memória',n:'Memória RAM',d:'Os pentes de memória ficam ao lado do processador. Em muitos notebooks dá para aumentar a memória.',good:['Mais abas e programas abertos','Menos travamentos'],bad:['Trava com várias janelas','Memória sempre cheia'],svc:'Upgrade de memória',p:SC,f:'Computadores — Upgrade de SSD e memória',cmp:'ram'},
+ nb_cool:{k:'notebook · refrigeração',n:'Cooler e tubo de cobre',d:'A ventoinha e o tubo de cobre tiram o calor do processador. É a parte que mais junta poeira.',good:['Limpeza e pasta nova baixam a temperatura','Menos barulho'],bad:['Notebook muito quente','Ventoinha alta o tempo todo','Desliga sozinho'],svc:'Limpeza e pasta térmica',p:SC,f:'Computadores — Limpeza e pasta térmica'},
+ nb_board:{k:'notebook · placa',n:'Placa-mãe',d:'Onde ficam o processador, os conectores e os slots. Defeitos aqui exigem diagnóstico técnico.',good:['Diagnóstico antes de qualquer gasto'],bad:['Não liga','Não carrega','Portas falhando'],svc:'Diagnóstico de hardware',p:SC,f:'Computadores — Visita técnica'},
  mb:{k:'peça · placa principal',n:'Placa-mãe',d:'Liga todas as peças: processador, memória, SSDs, placa de vídeo e portas. Define quais upgrades são possíveis.',good:['Portas USB, rede e áudio','Slots para SSD NVMe e memória'],bad:['Liga mas não dá vídeo','USB ou áudio falhando','Bipes ao ligar'],svc:'Diagnóstico de hardware',p:'visita R$ 50',f:'Computadores — Visita técnica'},
  psu:{k:'peça · energia',n:'Fonte de alimentação',d:'Converte a energia da tomada e alimenta todas as peças. Uma fonte ruim pode danificar o computador.',good:['Energia estável e segura','Protege as outras peças'],bad:['PC não liga ou reinicia sozinho','Cheiro de queimado ou estalos','Desliga ao abrir jogos'],svc:'Diagnóstico de hardware',p:'visita R$ 50',f:'Computadores — Visita técnica'},
  fans:{k:'peça · refrigeração',n:'Ventoinhas do gabinete',d:'Puxam ar fresco pela frente e jogam o ar quente para fora. Com poeira, o computador esquenta.',good:['Peças mais frias duram mais','Menos barulho depois da limpeza'],bad:['Muita poeira acumulada','Barulho alto ou ventoinha parada','PC esquentando'],svc:'Limpeza completa',p:SC,f:'Computadores — Limpeza e pasta térmica'},
@@ -1508,6 +1515,8 @@ const ITEMS={
    keep:{min:[-2.75,.3,-4.55],max:[1.1,3.8,-2.6]},
    hots:[{i:'cooler',go:'cooler',p:[-1.55,2.75,-3.75]},{i:'ram',go:'ram',p:[-1.05,2.85,-3.85]},{i:'nvme',go:'nvme',p:[-1.9,2.3,-4.2]},{i:'gpu',go:'gpu',p:[-1.15,2.02,-3.18]},{i:'hdd',go:'hdd',p:[-.93,.84,-2.9]},{i:'psu',p:[-2.3,.78,-3.5]},{i:'fans',p:[-2.45,3.0,-3.7]},{i:'mb',p:[-2.0,1.5,-4.2]}]},
  nb:{g:'Aparelhos',ic:'💻',label:'Notebook',sub:'Dell Latitude',file:'notebook',S:2.6,info:'dev_nb',rot:[0,Math.PI/2,0],view:[.35,.6,1],
+   inside:{file:'notebook_dentro',S:2.6,autoFlat:true,view:[0,1.3,1],note:'Escaneamento 3D feito a partir de fotos de um notebook real aberto (Framework Laptop).',
+     hots:[{i:'nb_cool',go:'nbfan',p:[1.12,1.59,-1.44]},{i:'nb_ram',go:'ram',p:[2.49,1.34,-1.36]},{i:'nb_ssd',go:'nvme',p:[1.82,1,-1.3]},{i:'nb_batt',p:[1.67,.25,-1.03]},{i:'nb_board',p:[.47,1.42,-1.38]}]},
    hots:[{i:'nb_screen',f:[.5,.62,.08]},{i:'nb_kb',f:[.5,.06,.5]},{i:'nvme',go:'nvme',f:[.32,.03,.42]},{i:'ram',go:'ram',f:[.66,.03,.42]},{i:'nb_batt',f:[.5,.03,.82]},{i:'cooler',go:'cooler',f:[.82,.03,.3]}]},
  ph:{g:'Aparelhos',ic:'📱',label:'Celular',sub:'smartphone',file:'celular',S:1.7,info:'dev_ph',rot:[0,Math.PI,0],view:[.55,.12,1],
    hots:[{i:'ph_screen',f:[.5,.55,1]},{i:'ph_cam',f:[.72,.88,0]},{i:'ph_batt',f:[.5,.45,.5]},{i:'ph_port',mesh:/Frame_Port/}]},
@@ -1515,6 +1524,7 @@ const ITEMS={
    hots:[{i:'cn_air',f:[.5,.95,.5]},{i:'cn_disc',f:[.5,.2,1]},{i:'cn_ssd',go:'nvme',f:[.5,.55,.5]},{i:'cn_pad',extra:true,f:[.5,.8,.5]}]},
  gpu:{g:'Peças',ic:'🟩',label:'Placa de vídeo',sub:'GeForce RTX',file:'gpu',S:2.8,info:'gpu',rot:[0,0,Math.PI/2],view:[.3,.5,1],anim:/1200|1500/},
  ram:{g:'Peças',ic:'🧠',label:'Memória RAM',sub:'DDR4',file:'ram',S:2.4,info:'ram',rot:[Math.PI/2,0,0],view:[.2,.3,1]},
+ nbfan:{g:'Peças',ic:'🌬️',label:'Ventoinha',sub:'de notebook',file:'ventoinha_notebook',S:1.8,info:'nbfan',view:[.4,.9,1]},
  cooler:{g:'Peças',ic:'🌀',label:'Cooler',sub:'processador',file:'cooler',S:2,info:'cooler',view:[.8,.35,1]},
  hdd:{g:'Peças',ic:'💽',label:'HD 3,5"',sub:'até 160 MB/s',file:'hdd',S:2.2,info:'hdd',view:[.4,.8,1]},
  sata:{g:'Peças',ic:'🔷',label:'SSD SATA',sub:'até 550 MB/s',file:'sata',S:1.9,info:'sata',view:[.4,.8,1]},
@@ -1526,7 +1536,7 @@ const REAL={hdd:147,sata:100,nvme:80};
 
 /* ---------------- Interface ---------------- */
 const rail=$('rail'),panel=$('panel3d'),cmpEl=$('cmp'),cmpBox=$('cmpBox');
-let cur='pc',selHot=null,viewer=null;
+let cur='pc',selHot=null,viewer=null,inside=false;
 (function buildRail(){
   let g='',h='';
   for(const[k,it]of Object.entries(ITEMS)){
@@ -1556,7 +1566,9 @@ function renderPanel(){
   }else if(it.info.startsWith('dev_')){
     const p=INFO[it.info];
     panel.innerHTML=`<div class="fadein"><span class="k">// ${p.k}</span><h3>${p.n}</h3><p class="desc">${p.d}</p>
-    <h4>CLIQUE NOS PONTOS</h4><div class="hlist">${it.hots.map((h,i)=>`<button type="button" class="hl" data-hot="${i}"><em>${i+1}</em>${INFO[h.i].n}${h.go?'<small>ver em 3D →</small>':''}</button>`).join('')}</div>
+    ${it.inside?`<button type="button" class="btn ${inside?'btn-ghost':'btn-pri'} btn-sm" data-inside style="width:100%;margin-top:14px">${inside?'↩ Ver por fora':'🔧 Ver por dentro (interior real)'}</button>`:''}
+    ${inside&&it.inside.note?`<p class="desc" style="font-size:13px;margin-top:10px">${it.inside.note}</p>`:''}
+    <h4>CLIQUE NOS PONTOS</h4><div class="hlist">${curHots().map((h,i)=>`<button type="button" class="hl" data-hot="${i}"><em>${i+1}</em>${INFO[h.i].n}${h.go?'<small>ver em 3D →</small>':''}</button>`).join('')}</div>
     <h4>SERVIÇOS</h4><div class="svcs">${p.svcs.map(s=>`<span>${s}</span>`).join('')}</div>
     <div class="pfoot"><a class="btn btn-wa btn-sm" target="_blank" rel="noopener" href="${waLink(`Olá! Vi o ${p.wa} na vitrine 3D do site e quero um orçamento.`)}">Pedir orçamento no WhatsApp</a></div></div>`;
   }else{
@@ -1566,19 +1578,28 @@ function renderPanel(){
 }
 panel.addEventListener('click',e=>{
   const h=e.target.closest('[data-hot]');if(h)return hotClick(+h.dataset.hot);
+  if(e.target.closest('[data-inside]'))return setInside(!inside);
   if(e.target.closest('[data-back]')){selHot=null;renderPanel();viewer&&viewer.select(-1);return}
   const c=e.target.closest('[data-cmp]');if(c)return openCmp(c.dataset.cmp,c.dataset.ck);
   const f=e.target.closest('[data-fill]');if(f&&window.prefill)window.prefill(f.dataset.fill);
 });
+function curHots(){const it=ITEMS[cur];return(inside&&it.inside?it.inside.hots:it.hots)||[]}
+function setInside(on){
+  inside=!!on&&!!ITEMS[cur].inside;selHot=null;
+  $('sIn').setAttribute('aria-pressed',inside);
+  $('sKind').textContent=inside?'interior real':ITEMS[cur].g==='Peças'?'peça real':'aparelho real';
+  renderPanel();if(viewer)viewer.load(cur);
+}
 function hotClick(i){
-  const h=ITEMS[cur].hots[i];if(!h)return;
+  const h=curHots()[i];if(!h)return;
   if(h.go&&selHot===h.i){show(h.go);return}
   selHot=h.i;renderPanel();
   if(h.go){const b=document.createElement('button');b.type='button';b.className='btn btn-pri btn-sm';b.style.width='100%';b.style.marginTop='10px';b.textContent=`Ver ${ITEMS[h.go].label} em 3D →`;b.onclick=()=>show(h.go);panel.querySelector('.pfoot').prepend(b)}
   viewer&&viewer.select(i);
 }
 function show(k){
-  if(!ITEMS[k])return;cur=k;selHot=null;
+  if(!ITEMS[k])return;cur=k;selHot=null;inside=false;
+  $('sIn').style.display=ITEMS[k].inside?'':'none';$('sIn').setAttribute('aria-pressed','false');
   rail.querySelectorAll('.ri').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===k));
   const it=ITEMS[k];$('sName').textContent=it.label;$('sKind').textContent=it.cmp?'comparativo':it.g==='Peças'?'peça real':'aparelho real';
   renderPanel();
@@ -1599,6 +1620,7 @@ function closeCmp(){if(!cmpEl.classList.contains('open'))return;cmpEl.classList.
 cmpEl.addEventListener('click',e=>{if(e.target===cmpEl||e.target.closest('[data-close]'))closeCmp();if(e.target.closest('[data-see]')){closeCmp();show('cmp');$('vitrine').scrollIntoView({behavior:reduce?'auto':'smooth'})}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCmp()});
 window.vitrineShow=k=>{show(k);$('vitrine').scrollIntoView({behavior:reduce?'auto':'smooth'})};
+$('sIn').addEventListener('click',()=>setInside(!inside));
 renderPanel();
 
 /* ---------------- 3D ---------------- */
@@ -1649,6 +1671,7 @@ function createViewer(){
     const inner=new THREE.Group();inner.add(src);
     src.position.set(0,0,0);src.scale.setScalar(1);src.rotation.set(0,0,0);
     if(cfg.rot)inner.rotation.set(...cfg.rot);
+    if(cfg.autoFlat){inner.rotation.set(0,0,0);inner.updateMatrixWorld(true);inner.quaternion.copy(flatQuat(src));if(cfg.rot)inner.quaternion.premultiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(...cfg.rot)))}
     const outer=new THREE.Group();outer.add(inner);
     outer.updateMatrixWorld(true);
     let b=new THREE.Box3().setFromObject(inner);const s=b.getSize(new THREE.Vector3());
@@ -1656,6 +1679,23 @@ function createViewer(){
     b=new THREE.Box3().setFromObject(inner);const c=b.getCenter(new THREE.Vector3());
     inner.position.set(-c.x,-b.min.y,-c.z);outer.updateMatrixWorld(true);
     return{outer,src,box:new THREE.Box3().setFromObject(outer)};
+  }
+  /* alinha modelos escaneados (inclinados) deitando-os no chão: análise de componentes principais */
+  function flatQuat(src){
+    src.updateMatrixWorld(true);const pts=[];const v=new THREE.Vector3();
+    src.traverse(o=>{if(!o.isMesh)return;const p=o.geometry.attributes.position;const step=Math.max(1,Math.floor(p.count/4000));for(let i=0;i<p.count;i+=step){v.fromBufferAttribute(p,i).applyMatrix4(o.matrixWorld);pts.push(v.clone())}});
+    const m=new THREE.Vector3();pts.forEach(p=>m.add(p));m.divideScalar(pts.length);
+    const a=[[0,0,0],[0,0,0],[0,0,0]];pts.forEach(p=>{const d=[p.x-m.x,p.y-m.y,p.z-m.z];for(let i=0;i<3;i++)for(let j=0;j<3;j++)a[i][j]+=d[i]*d[j]});
+    const V=[[1,0,0],[0,1,0],[0,0,1]];
+    for(let s=0;s<50;s++){let p=0,q=1;for(let i=0;i<3;i++)for(let j=i+1;j<3;j++)if(Math.abs(a[i][j])>Math.abs(a[p][q])){p=i;q=j}
+      if(Math.abs(a[p][q])<1e-12)break;const th=.5*Math.atan2(2*a[p][q],a[q][q]-a[p][p]),c=Math.cos(th),sn=Math.sin(th);
+      for(let k=0;k<3;k++){const akp=a[k][p],akq=a[k][q];a[k][p]=c*akp-sn*akq;a[k][q]=sn*akp+c*akq}
+      for(let k=0;k<3;k++){const apk=a[p][k],aqk=a[q][k];a[p][k]=c*apk-sn*aqk;a[q][k]=sn*apk+c*aqk}
+      for(let k=0;k<3;k++){const vkp=V[k][p],vkq=V[k][q];V[k][p]=c*vkp-sn*vkq;V[k][q]=sn*vkp+c*vkq}}
+    const ev=[0,1,2].map(i=>({val:a[i][i],vec:new THREE.Vector3(V[0][i],V[1][i],V[2][i]).normalize()})).sort((x,y)=>y.val-x.val);
+    const e1=ev[0].vec,n=ev[2].vec;if(n.y<0)n.negate();const e2=new THREE.Vector3().crossVectors(e1,n);
+    const R=new THREE.Matrix4().makeBasis(e1,n,e2).transpose();
+    return new THREE.Quaternion().setFromRotationMatrix(R);
   }
   function srcPoint(prep,h){
     const src=prep.src;
@@ -1678,7 +1718,7 @@ function createViewer(){
   }
   let home=null;
   async function load(k){
-    const it=ITEMS[k],my=++token;clearStage();
+    const it=(inside&&ITEMS[k].inside)?ITEMS[k].inside:ITEMS[k],my=++token;clearStage();
     loadEl.classList.remove('off');loadBar.style.width='0%';$('sLoadTxt').textContent='carregando modelo 3D…';
     try{
       if(it.cmp){
